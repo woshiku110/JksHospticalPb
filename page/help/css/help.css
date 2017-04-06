@@ -1,0 +1,51 @@
+*{margin: 0px;padding: 0px; font-family: "Microsoft YaHei", 微软雅黑;  }
+.container{
+    width: 100%;
+}
+.search{
+    width: 98%;
+    height: 34px;
+    border-bottom: 1px solid #BBBBBB;
+    padding: 8px 1%;
+}
+.search input{
+    width: 100%;
+    height: 34px;
+    border-radius: 4px;
+    border: 1px solid #BBBBBB;
+    background: #FFFFFF;
+    outline: none;
+    text-align: center;
+}
+.hotQuestion{
+    display: inline-block;
+    width: 99%;
+    padding: 10px 0 10px 1%;
+}
+.content{
+    width: 100%;
+    height: 400px;
+    background: #FFFFFF;
+}
+.contentList{
+    width: calc(100% - 10px);
+    height: 40px;
+    border-bottom: 1px solid #BBBBBB;
+    padding: 5px 0 0 20px;
+}
+.font{
+    display: inline-block;
+    float: left;
+    width: 96%;
+    height: 40px;
+   /* background: pink;*/
+    line-height: 40px;
+}
+.img{
+    display: inline-block;
+    width: 3%;
+    height: 30px;
+    background: url("../img/btn_more.png") no-repeat;
+    float: left;
+   margin: 8px 0 0 1%;
+}

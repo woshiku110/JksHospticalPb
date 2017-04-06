@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>会诊订单</title>
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="consultationOrder.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+
+    <script type="text/javascript" src="js/consultationOrder.js"></script>
+    <script type="text/javascript" src="js/parseConsultationOrder.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+</head>
+<body>
+<div id="dk"style="background: #BBB;display:none;opacity: 0.3;position: fixed;left: 0px;top: 0px;width:100%;height: 100%;z-index: 100"></div>
+    <div class="container">
+        <div class="head">
+            <a>会诊订单</a>
+        </div>
+        <div class="list">
+            <div class="listBtn">
+                <a style="color:#FFFFFF;background-color:#2872b7">未分配</a>
+                <a style="background-color:#8BABCF">已分配</a>
+            </div>
+            <div class="table">
+                &nbsp;&nbsp;<a>当前订单总数:</a><a style="color: #2872b7">10</a>
+                <div id="consultationList"></div>
+            </div>
+            <div class="consultation_message" style="z-index: 10000000 ">
+                <a id="consultation_message_head">会诊详情</a>
+                <div class="consultation_message1">
+                    <div id="consultation_detail">
+                        <a>会诊单号</a><span>5656564</span><br>
+                        <a>主治医生</a><span>王大安</span>
+                        <a>医生电话</a><span>15896342031</span><br>
+                        <a>就诊医院</a><span>三水医院</span><br>
+                        <a>患者姓名</a><span>周明</span>
+                        <a>患者电话</a><span>17895463210</span><br>
+                        <a>既往病史</a><span>流鼻血</span><br>
+                        <a>期望医生</a><span>张春雨</span>
+                        <a>期望科室</a><span>神经科</span><br>
+                        <a>期望会诊人数</a><span>10</span><a style="margin-left: -40px">人</a><br>
+                        <a>文字资料</a><p>我好像得了神经病加精神病，非常需要治疗，加快速度治疗，请医生尽快联系我！我好像得了神经病加精神病，非常需要治疗，加快速度治疗，请医生尽快联系我！</p>
+                        <div id="consultation_message_picture">
+                            <a style="margin-top: 0px">图片资料</a>
+                            <div style="float: left;margin-top: 12px">
+                                <img src="img/qq.jpg">
+                                <img src="img/qq.jpg">
+                                <img src="img/qq.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="btn">
+                        <a class="button" onclick="btn(2)">分配</a>
+                        <a class="button" style="background: #FFFFFF;border:1px solid #2872b7;color:#2872b7;margin-left: 20px" onclick="btn(2)">取消</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

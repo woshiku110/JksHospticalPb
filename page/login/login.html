@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>登陆</title>
+	
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.js"></script>
+	
+	<script type="text/javascript" src="./js/login.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+</head>
+<body>
+	<div id="container" style="width:100%;height:100%;">
+		<form id="login" action="http://192.168.0.202:8080/jfs1.1/upms/worker_login" method="post" >
+			<br/><br/>
+			<h1>金康晟医患对接平台-中心管理端</h1>
+			<br/><br/><br/>
+			<div class="inputRow">
+				<span class="icon" style="background: url('img/user.png') #28B778 center no-repeat;"></span>
+				<input type='text' id='username' name='username'/>
+			</div>
+			<br/><br/>
+			<div class="inputRow">
+				<span class="icon" style="background: url('img/lock.png') #FEB848 center no-repeat;"></span>
+				<input type='password' id='password' name='password'/>
+			</div>
+			<br><br>
+			<span id='hint'></span>
+			<input id="submit" type='submit' value='登　录'/>
+		</form>
+	</div>
+</body>
+</html>
+

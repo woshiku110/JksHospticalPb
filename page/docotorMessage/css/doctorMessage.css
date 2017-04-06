@@ -1,0 +1,95 @@
+*{margin: 0px;padding: 0px; font-family: "Microsoft YaHei", 微软雅黑;  }
+body{
+    background: #FBFBFB;
+}
+.message {
+    width: 96%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 10px 0 10px 15px;
+}
+.message img{
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+}
+.subject{
+    width: 70%;
+    height: 80px;
+    float: right;
+}
+h3{
+    display: inline-block;
+    float: left;
+}
+h4{
+    float: left;
+    margin: 10px 0 0 -76px;
+}
+.subject a{
+    float: left;
+    display: inline-block;
+    font-size: 14px;
+    color: #8e8e8e;
+    margin: 6px 0 0 10px;
+}
+h2,h3,h4{
+    font-weight: normal;
+    line-height: 32px;
+}
+h2{
+    font-size: 18px;
+}
+h3,h4{
+    color: #8e8e8e;
+    font-size: 14px;
+}
+.special{
+    margin-top: 20px;
+    border-bottom:1px solid #e2e2e2;
+    border-top:1px solid #e2e2e2;
+    background: #FFFFFF;
+    padding-bottom: 8px;
+}
+.tab{
+    width: 6px;
+    height: 22px;
+    background:#2872b7 ;
+    float: left;
+    clear: both;
+    margin:6px 0 0 10px;
+}
+.h1{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 10px;
+    line-height: 34px;
+    display: block;
+    width: 90px;
+    text-align: center;
+}
+.special p{
+    display: block;
+    margin-left: 16px;
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    padding-top: 6px;
+}
+.special span{
+    color: #2872b7;
+    font-size: 14px;
+    float: right;
+    margin-right: 10px;
+    display: block;
+}
+table{
+    border-collapse: collapse;
+}
+table tr td{
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    height: 30px;
+    width: 80px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0"/>
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="js/healthMessage.js"></script>
+    <link rel="stylesheet" href="css/healthMessage.css" />
+    <title>健康详情</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var before = getParam('pid');
+            console.log(before.length);
+            _pid = before.substr(0,before.length-0);
+            getMyFamilyDetailed();
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="information">
+        <div class="head">
+            <img id="picture" src="">
+            <span id="name"></span>
+        </div>
+        <div class="message">
+            <span>性别</span>
+            <a id="sex"></a>
+        </div>
+        <div class="message">
+            <span>身高</span>
+            <input id="height" value="140cm" disabled="true"/>
+        </div>
+        <div class="message">
+            <span>体重</span>
+            <input id="weight" value="52kg" disabled="true"/>
+        </div>
+        <div class="message">
+            <span>血型</span>
+            <a id="bloodType"></a>
+        </div>
+        <div class="message">
+            <span>过敏源</span>
+            <a id="anaphylactogen"></a>
+        </div>
+        <div class="message">
+            <span>药物禁忌</span>
+            <a id="avoid"> </a>
+        </div>
+        <div class="message">
+            <span>既往病史</span>
+            <a id="medictialH"></a>
+        </div>
+    </div>
+  <!--  <div class="medicalRecord">
+        <a class="list">就医记录</a>
+        <div class="message">
+            <p class="time">2016-12-13</p>
+            <p>头疼</p>
+            <img src="img/btn_more.png">
+        </div>
+        <div class="message">
+            <p class="time">2016-12-13</p>
+            <p>头疼</p>
+            <img src="img/btn_more.png">
+        </div>
+        <div class="message">
+            <p class="time">2016-12-13</p>
+            <p>头疼</p>
+            <img src="img/btn_more.png">
+        </div>
+    </div>-->
+</div>
+</body>
+</html>

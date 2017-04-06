@@ -1,0 +1,94 @@
+*{margin: 0;padding: 0;}
+.container{
+    width: 1000px;
+    margin: 50px 0 0 14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+}
+.head{
+    border-bottom: 1px solid #2872b7;
+}
+.head a{
+    width: 74px;
+    color: #2872b7;
+    font-size: 18px;
+    display: block;
+    border-bottom: 3px solid #2872b7;
+    line-height: 43px;
+}
+.list{
+    margin-top: 20px;
+}
+.listBtn{
+    width: 100%;
+    float: left;
+    border-bottom: 2px solid #2872b7;
+    cursor: pointer;
+}
+.listBtn a{
+    float: left;
+    font-size: 16px;
+    display: block;
+    width: 136px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+.table{
+    width: 100%;
+    float: left;
+    height: 30px;
+    background: #FFFFFF;
+    line-height: 30px;
+}
+.consultation_message{
+    width: 500px;
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 24%;
+    background: #FFFFFF;
+}
+#consultation_detail{
+    width: 94%;
+    margin: 20px 1% 0 5%;
+    overflow: auto;
+
+}
+#consultation_detail a{
+    margin: 40px 20px 0 0;
+    line-height: 30px;
+}
+#consultation_detail span{
+    margin-right: 40px;
+}
+#consultation_detail p{
+    margin-left: 82px;
+    margin-top: -24px;
+
+}
+#consultation_message_head{
+    display: inline-block;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    background: #2872b7;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+#consultation_message_picture a{
+    float: left;
+    display: block;
+}
+#consultation_message_picture img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 10px;
+}
+#btn{
+  padding: 20px 0 10px 0;
+    text-align: center;
+}

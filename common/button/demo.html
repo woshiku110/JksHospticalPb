@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="button.js"></script>
+</head>
+<body>
+	<a id="b1" class ="button" onclick="changeIcon()">普通按钮</a>
+	<a id="b2" class ="button" icon="common/button/ico_bill.png" onclick="changeText()">开始分诊</a>
+	<a id="b3" class ="button" disabled="disabled" onclick="disable()">不能使用的按钮</a>
+	<a id="b4" class ="button" onclick="enable()">恢复左边按钮</a>
+	<a id="b5" class ="button" onclick="addButton()">增加一个按钮</a>
+	<br/><br/>
+	<div id="div"></div>   
+	<script type="text/javascript">
+		
+		function changeIcon(){
+			var a = document.getElementById("b2");
+			a.setAttribute("icon","common/button/ico_stop.png");
+		}
+		function changeText(){
+			var a = document.getElementById("b2");
+			a.setText("暂停分诊");
+		}
+		function disable(){
+			var a = document.getElementById("b3");
+			a.setAttribute("disabled","disabled");
+		}
+		function enable(){
+			var a = document.getElementById("b3");
+			a.removeAttribute("disabled");
+		}
+		function addButton(){
+			var a = document.getElementById("div");
+			for(var i=0;i<10;i++)
+				div.innerHTML+="&nbsp;<a id=\"b6\" class =\"button\" icon=\"common/button/ico_bill.png\">新按钮</a>";
+		}
+	</script>
+</body>
+</html>
+
+
+
+

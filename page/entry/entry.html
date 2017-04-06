@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>震哥哥</title>
+<meta charset="utf-8"/>
+<script type="text/javascript" src="../../common/js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="../../common/js/json2.js"></script>
+<script type="text/javascript" src="../../common/js/util.js"></script>
+<script type="text/javascript" src="../../common/table/table.js"></script>
+<script type="text/javascript" src="../../common/button/button.js"></script>
+<link rel="stylesheet" type="text/css" href="../../common/button/button.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body style="width: 1200px">
+<ul id="asideLeft">
+	<li>
+		<div id="bring"></div> 　
+		<div id="pause" style="display:none"></div> 　
+		<div id="no"></div>
+	</li>
+	<li style="margin:45px 0" class="underline"><span class="underspan">处方图片</span></li>
+	<li style="margin: 26px 0 35px;height:426px;overflow:hidden;border:1px solid black;position:relative">
+		<img id="img" src="" />
+	</li>
+	<li><div id="bigbtn">
+
+		<div class="ico_left"></div>
+		<div class="ico_left_re"></div>
+		<div class="ico_sclare_large"></div>
+		<div class="picture_num">
+			<span id="page_current"></span>/<span id="page_length"></span>
+		</div>
+		<div class="ico_sclare_small"></div>
+		<div class="ico_right_re"></div>
+		<div class="ico_right"></div>
+
+	</div></li>
+</ul>
+
+
+<ul id="asideRight">
+	<li class="underline"><span class="underspan">录入信息</span></li>
+	<li class="black14">订单编号 : <span id="num">00001<span></li>
+	<li class="black14" style="margin:12px 0">药品名称/编号　<input id="name" value="阿莫西林"></li>
+	<li><input type="button" id="defined" value="下拉选中后"/></li>
+	<li class="black14">
+		药品规格  <select id="guige"></select>
+	</li>
+	<li style="margin:15px 0" class="black14">
+		药品数量 <input id="count"/>
+	</li>
+			
+	<li style="margin:20px 0 40px;">
+		<button onclick="entry()">录入</button>
+		<button onclick="submit()">提交</button>
+	</li>
+
+	
+	<li><h2>录入细表</h2></li>
+	<li style="height:1px;background:#2872B7;margin:20px 0"><div class="bluestr"></div></li>
+	<li class="black12">当前录入药品总数: <span id="tr_count"></span></li>
+	<li id="table1"></li>
+</ul>
+
+</body>
+</html>
+
+
+
+
+
+<script type="text/javascript" src="js/entry.js"></script>
+<script type="text/javascript" src="js/bring.js"></script>
+<script type="text/javascript" src="js/img.js"></script>
+

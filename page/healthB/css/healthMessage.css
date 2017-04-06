@@ -1,0 +1,93 @@
+*{margin: 0px;padding: 0px; font-family: "Microsoft YaHei", 微软雅黑;  }
+.container{
+    float: left;
+    clear: both;
+    width: 100%;
+    overflow: auto;
+    background: #FBFBFB;
+    font-size: 42px;
+}
+.information{
+    width: 100%;
+    float: left;
+    clear: both;
+    background: #FFFFFF;
+}
+.head{
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 38px;
+    float: left;
+    clear: both;
+}
+.head img{
+    float: left;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    margin: 30px 30px ;
+}
+.head span{
+    display: inline-block;
+    float: left;
+    margin-top: 104px;
+    font-weight: 500;
+    color: #666666;
+}
+.message{
+    width: 100%;
+    border-bottom:1px solid #e2e2e2 ;
+    padding: 28px 0 30px 40px ;
+    font-size: 42px;
+    float: left;
+    clear: both;
+    color: #8e8e8e;
+}
+.message a{
+    margin-left: 130px;
+    color: #8e8e8e;
+}
+.message span{
+    color: #666666;
+}
+.message p{
+    display: block;
+    float: left;
+}
+.message img{
+    float: right;
+    margin-right: 100px;
+    width: 24px;
+    height: 70px;
+}
+.message input{
+    width: 200px;
+    height: 52px;
+    margin-left: 118px;
+    font-size: 42px;
+    color: #8e8e8e;
+    border: none;
+    padding-left: 10px;
+}
+.medicalRecord{
+    float: left;
+    clear: both;
+    width: 100%;
+    border-top: 1px solid #e2e2e2;
+    margin-top: 30px;
+    border-bottom: 1px solid #e2e2e2;
+    background: #FFFFFF;
+
+}
+.list{
+    width: 100%;
+    display: inline-block;
+    font-size: 42px;
+    padding-left: 40px;
+    line-height: 100px;
+    border-bottom: 1px solid #e2e2e2;
+    color: #666666;
+}
+.time{
+    padding-right: 80px;
+}

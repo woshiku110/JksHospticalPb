@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="css/symptomAdd.css">
+    <link rel="stylesheet" href="css/multiple.css">
+
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="../../common/dialog/dialog.js"></script>
+
+    <script type="text/javascript" src="js/symptomAdd.js"></script>
+    <script type="text/javascript" src="js/addQuestion.js"></script>
+    <script type="text/javascript" src="js/fileUp.js"></script>
+    <script type="text/javascript" src="js/multiple.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="up">
+            <div class="up_head">
+                <div class="up_head_1">
+                    <a>基础信息</a>
+                </div>
+            </div>
+            <div class="up_left">
+                <div style="margin-top:20px;">
+                    <div class="up_left_1">
+                        <a>症状名称：</a>
+                        <input type="text" value="牙疼"/>
+                    </div>
+                    <div class="up_left_1">
+                        <a>对应部位：</a>
+                        <input id="text" type="text"/>
+                        <a id="add_symptom" class="button add_btn" icon="page/symptomAdd/img/ico_add_List.png" onclick="add()">添加部位</a>
+                    </div>
+                </div>
+            </div>
+            <div class="up_right">
+                <span>图片上传：</span>
+                <div id="localImag">
+                    <form id= "uploadForm">
+                        <div id="preview"></div>
+                        <input type="file" id="file" name="upload"/>
+                      <!--  <a class="button" style="font-size: 14px;margin-top: 10px;background: #FFFFFF;border: 1px solid #2872b7;color:#2872b7">上传图片</a>-->
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="middle" style="background: white;height: 420px;margin-top:10px;display: none">
+            <div class="div_a" style="margin-left: 50px;padding-top: 30px;">
+                <div class="title">
+                    <span style="margin-right: 268px">待选部位</span>
+                    <span>已选部位</span>
+                </div>
+
+                <div class="div_a_a">
+                    <ul class="div_ul"></ul>
+                </div>
+                <div class="div_a_b">
+                    <button class="div_a_b_buta btn" >>></button>
+                    <button class="div_a_b_butb btn"><<</button>
+                </div>
+                <div class="div_a_c">
+                    <ul class="div_ul"></ul>
+                </div>
+            </div>
+            <div class="div_b">
+                <button class="div_b_buta">确定</button>
+                <button class="div_b_butb">取消</button>
+            </div>
+        </div>
+        <div class="down">
+            <div class="down_head">
+                <a>对应问题</a>
+            </div>
+            <div class="down_content">
+             <!--   <div class="down_content_question">
+                    <div class="down_content_question_up">
+                        <div class="down_content_question_up_img"></div>
+                        <div style="float:right;margin-top: 10px;margin-right: 45%">
+                            <a>问题类型：</a>
+                           <select style="width: 100px;height: 30px;" >
+                               <option>单选</option>
+                               <option>多选</option>
+                           </select>&nbsp&nbsp&nbsp
+                            <a>题干：</a>
+                            <input type="text" style="width: 272px;height: 30px">
+                        </div>
+                    </div>
+                    <div class="down_content_question_down">
+                        <div id="input" style="width:97%;float:left;">
+                            <span style="margin-left: 32px">答案</span>
+                            <span>
+                                <a>A:</a>
+                                <input type="text">
+                            </span>
+                            <span>
+                                <a>B:</a>
+                                <input type="text">
+                            </span>
+                            <span>
+                                <a>C:</a>
+                                <input type="text">
+                            </span>
+                            <span>
+                                <a>D:</a>
+                                <input id ="last" type="text" onfocus="addOneOption()">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="br"></div>
+                </div>
+                <div class="qqqq"></div>
+            </div>-->
+            </div>
+            <div class="down_bottom">
+                <a id="add_question" class="button" style="margin-right: 40px" onclick="addQuestion()">添加问题</a>
+                <a id="submit" class="button" onclick=" finishSubmit()" >完成提交</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

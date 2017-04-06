@@ -1,0 +1,91 @@
+@CHARSET "UTF-8";
+*{  margin: 0;  padding: 0;  }
+.container{
+    width: 1000px;
+    height: 1000px;
+}
+.head{
+    overflow:hidden;
+}
+.head .add_hospital{
+    width: 100%;
+    margin-top: 12px;
+}
+.td_title{
+	width:70px;
+}
+.col{
+	width:120px;
+}
+.col select{
+	width:130px;
+	height:24px;
+}
+.col input{
+	width:130px;
+	height:24px;
+	border:1px solid #CCCCCC;
+	border-radius:5px; 
+}
+textarea{
+	border:1px solid #CCCCCC;
+	border-radius:5px; 
+}
+.col div{
+	width:130px;
+	height:24px;
+}
+.content{
+    height: 500px;
+}
+.content_name{
+    width: 100%;
+    border-bottom: 1px solid #2872b7;
+    margin-bottom:14px;
+}
+.content_name a{
+    display: inline-block;
+    height: 42px;
+    border-bottom: 3px solid #2872b7;
+    color: #2872b7;
+    font-size: 18px;
+    line-height: 46px;
+}
+#content_table{
+    width: 100%;
+    background: blue;
+}
+.setWidth{
+    display:block;
+    margin-top:10px; 
+}
+.setImageWidth{
+	display:block;
+    margin-top:20px; 
+}
+.setWh{
+	width:793px;
+	height:66px;
+	overflow:auto;
+}
+.setImageHeight{
+	width:793px;
+	/* height:105px; */
+	overflow:auto;
+}
+.detail_col{
+	width:150px;
+}
+.img_top{
+	position:absolute;
+	z-index:0;
+	height:33px;
+	width:33px;
+   /*  margin-left:137px;   */
+}
+.img_bottom{
+	position:absolute;
+	z-index:-1;
+	height:100px;
+	width:170px;
+}

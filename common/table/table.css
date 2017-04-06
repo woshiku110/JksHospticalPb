@@ -1,0 +1,36 @@
+.t_table{
+ 	border-collapse: separate;
+    color: #000000;
+    float:left;
+}
+.t_th{
+    font-size: 14px;
+    height: 42px;
+    line-height: 42px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0px;
+    background-color:#c8defc;
+}
+.t_td{
+    font-size: 14px;
+    height: 42px;
+    width: 100px;
+    line-height: 42px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0px;
+    color:#000;
+}
+.operate{
+	font-size: 14px;
+    height: 20px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0px;
+    white-space: nowrap;
+    display:block;
+    cursor:pointer;
+    color:#39f;
+}
+

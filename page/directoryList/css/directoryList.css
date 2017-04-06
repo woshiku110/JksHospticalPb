@@ -1,0 +1,22 @@
+*{  margin: 0px;padding: 0px;  font-family: "Microsoft YaHei", 微软雅黑;}
+.container{
+    margin:20px 0 0 1%;
+}
+.content{
+    width: 32.7%;
+    height:124px;
+    border: 1px #BBBBBB solid;
+    float: left;
+}
+.content img{
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    background: orange;
+    margin: 16px 0 0 20%;
+}
+.content a{
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 32px;
+}

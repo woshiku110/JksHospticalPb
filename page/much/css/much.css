@@ -1,0 +1,33 @@
+*{margin: 0px;padding: 0px; font-family: "Microsoft YaHei", 微软雅黑;  }
+.container{
+    width: 100%;
+    padding-top: 10px;
+    background: #FBFBFB;
+}
+.content{
+    width: 100%;
+    background: #FFFFFF;
+}
+.contentList{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #BBBBBB;
+}
+.font{
+    display: inline-block;
+    float: left;
+    width: 93%;
+    height: 40px;
+  /*  background: red;*/
+    line-height: 40px;
+    padding-left: 10px;
+
+}
+.img{
+    display: inline-block;
+    float: left;
+    width: 3%;
+    height: 28px;
+    background: url("../img/btn_more.png") no-repeat;
+    margin-top: 10px;
+}

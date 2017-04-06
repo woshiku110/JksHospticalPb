@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Simple Examples</title>
+	<link rel="stylesheet" type="text/css" href="page.css">
+	<link rel="stylesheet" href="../themes/default/default.css" />
+	<script charset="utf-8"  src="../js/jquery-1.11.3.js"></script>
+
+	<script charset="utf-8"  src="../js/page.js"></script>
+	<script charset="utf-8" src="../kindeditor-min.js"></script>
+	<script charset="utf-8" src="../lang/zh_CN.js"></script>
+	<script type="text/javascript" src="/common/js/util.js"></script>
+</head>
+	<body>
+	<div id="dk"style="background: #BBB;display:none;opacity: 0.3;position: fixed;left: 0px;top: 0px;width:100%;height: 100%;z-index: 100"></div>
+	<form>
+			<textarea id="content" name="content" style="width:700px;height:200px;visibility:hidden;">KindEditor</textarea>
+		</form>
+		<div class="dialog_picture">
+			<a style="height: 30px;display: block;background: #BBBBBB;text-align: center;line-height: 30px">添加图片</a>
+			<form id="addPicture">
+				<input type="file" id="picture" name="upload"/>
+				<a class="add">添加图片</a>
+				<div id="picture_address"></div>
+				<div style="margin-left: 38px;">
+					<a class="button" onclick="addPicture()">确定</a>
+					<a class="button" onclick="closeP(false)">取消</a>
+				</div>
+
+			</form>
+		</div>
+	</body>
+	<script>
+		KindEditor.ready(function(K) {
+			_editor = K.create('textarea[name="content"]', {
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : false,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+			});
+
+		});
+	</script>
+</html>

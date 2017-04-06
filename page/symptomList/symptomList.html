@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+	<link rel="stylesheet" type="text/css" href="css/symptomList.css">
+	<script type="text/javascript" src="../../common/js/json2.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../../common/table/table.js"></script>
+	<script type="text/javascript" src="../../common/button/button.js"></script>
+	<script type="text/javascript" src="js/dropDownInput.js"></script>
+	<script type="text/javascript" src="js/symptom.js"></script>
+	<style>
+			/*设置单个下拉框的样式，需要输入框有ID属性，都是类选择器*/
+			
+			/*下拉框的样式，ul元素*/
+			.si_inputDropDown{
+				max-height:80px;
+				border-left: 3px solid #c8defc;
+				border-right: 3px solid #c8defc;
+				border-bottom: 1px solid #c8defc;
+				border-bottom-right-radius:5px;
+				border-bottom-left-radius:5px;
+			}
+			/*默认下拉列表中选项的样式，li元素*/
+			.si_dropDownItem{
+				line-height: 30px;
+				font-size: 14px;
+				/*padding-left: 5px;*/
+				border-bottom: 2px solid #c8defc;
+
+			}
+			/*默认下拉列表中选中选项的样式，li元素的hover伪类，注意不是 :hover */
+			.si_dropDownItemHover{
+				background: #c8defc;
+			}
+	</style>
+	
+</head> 
+<body>
+	<div id="bigdiv">
+		<div class="d1">
+			<p class="p1">症状搜索</p>
+		</div>
+		<div class="d2"> 
+			<p>症状名称/所属部位:</p>
+			<input id="si" type="text"/>
+			<a id="search" class="button" >搜索</a>
+		</div>
+		<div class="d1">
+			<p class="p1">症状列表</p>
+		</div>
+		<div id="zzlb" class="zzlb">
+		</div>
+		<div class="duihuakuang" >
+			<p class="zzxxp" style="overflow-y:auto;overflow-x:hidden;">症状信息</p>
+			<div>
+				<span>症状序号: </span><span id="sp0"></span><br/>
+				<span>症状名称: </span><span id="sp1"></span><br/>
+				<span>所属部位: </span><span id="sp2"></span><br/>
+				<div class="divsp">
+					<span class="sp_3">相关问题: </span><p id="sp3"></p>
+				</div>
+			</div>
+			<button class="butf">返回</button>
+		</div>
+		<div class="scdhk" style="overflow-y:auto;overflow-x:hidden;">
+			<p>症状信息</p>
+			<div style="text-align: center;">
+				<h1>您确定要删除该条信息吗？</h1>
+				<button class="buts">删除</button>
+				<button class="butf">返回</button>
+			</div>
+		</div>
+		<div class="zz"></div>
+	</div>	
+</body>
+</html>
+<script type="text/javascript">
+	
+	var dz = "http://192.168.0.202:8080/jfs1.1/manage/";
+	
+	// loadzzbwInput();
+	var si = document.getElementById("si");
+	changeDropDownInput(si);
+	si.autoMatch = false;
+	si.visibleTemplate = function(option){
+		return option[1];
+	}
+	si.oninput = function(){
+		$.ajax({
+		 		//请求地址
+		        url: dz+"PartManage_symptomAllList",
+		        //请求类型
+		        type: 'post',
+		        //返回数据类型
+		        dataType:'json',
+		        //异步:true  同步:false
+		        async:true,
+		        //发送到服务器的数据。必须为 Key/Value 格式。
+		        data: {
+		        	'name':si.value.trim(),
+		        },
+		        //请求成功后回调函数
+		        success: function(res) {
+
+		        	if(res.success){
+		        		si.dataSource = JSON.toObject(res.msg);
+
+		        		console.log(JSON.toObject(res.msg));
+		        		si.flush();
+		        	}
+		        	else{
+		        		si.dataSource = [];
+		        		si.flush();
+
+		        	}
+		        },
+		        fail: function(){
+					si.dataSource = [];
+		        	si.flush();
+		        }
+		    });
+	}
+
+
+
+
+	// 查看
+	var ck=function(data){
+	    var a = document.createElement('a');
+	    a.innerHTML="查看";
+	    a.href="#";
+	    a.className = "cksc";
+	    a.onclick=function(){
+	    	// console.log(data);
+	    	$(".zz").show();
+			$(".duihuakuang").show();
+	    	
+			$.ajax({
+			 	//请求地址
+			    url: dz+"PartManage_checkSymptInfo",
+			    //请求类型
+			    type: 'post',
+			    //返回数据类型
+			    dataType:'json',
+			    //异步:true  同步:false
+			    async:true,
+			    //发送到服务器的数据。必须为 Key/Value 格式。
+			    data: {
+			        "pid":data[0],
+			        // "pid":1,
+			    },
+
+			 	// 症状序号: 1
+				// 症状名称: 牙疼
+				// 所属部位: ["眼","口","大腿","测试2"]
+				// 相关问题: [["2","牙疼？","[\"是\",\"否\"]"],["2","真的痛吗","[\"真的\",\"不骗你\"]"]]
+
+			    //请求成功后回调函数
+			    success: function(res) {
+			    	
+			    	var d = JSON.parse(res.msg);
+			    	// var d2 = JSON.parse(d[2]);
+			    	// for(var i=0; i<d.length;i++){
+			     //        d[i][4]=i+1;
+		      //       }
+		      		d[4]=data[5];
+			    	console.log(d);
+			    	// console.log(d2[2]);
+			    	// console.log(d);
+			    	document.getElementById('sp0').innerHTML=d[4];
+			    	document.getElementById('sp1').innerHTML=d[1];
+			    	
+			    	var d3 = JSON.parse(d[2]);
+			    	d3.str = "";
+			    	for(var i=0; i<d3.length;i++){
+			    		d3.str+="、"+d3[i];
+			    	}
+			    	d3.str = d3.str.substring(1);
+			    	document.getElementById('sp2').innerHTML=d3.str;
+
+
+			    	var d4 = JSON.parse(d[3]);
+			    	var sp3 = document.getElementById('sp3');
+			    	console.log(d4.length);
+			    	for(var i=0; i<d4.length; i++){
+			    		for(var f=0; f<2; f++){
+			    			if(f<1){
+			    				if(d4[i][0]=="1"){
+			    					sp3.innerHTML += "(单选)"+"&nbsp;&nbsp;&nbsp;"+(i+1)+"、"+d4[i][1]+"<br/>";
+			    				}else{
+			    					sp3.innerHTML += "(多选)"+"&nbsp;&nbsp;&nbsp;"+(i+1)+"、"+d4[i][1]+"<br/>";
+			    				}
+			    				
+			    			}else{
+			    				var d4i2 = JSON.parse(d4[i][2]);
+			    				sp3.innerHTML += "&nbsp;&nbsp;&nbsp;"+d4i2[0]+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+d4i2[1]+"<br/>";
+			    			}
+			    		}
+			    	}
+			        console.log("成功！");
+			    },
+			    //请求失败后回调函数
+			    error:function(res){
+			        // alert("网络繁忙，请稍后。。。");
+			    }
+			});
+			$(".zz").click(function(){
+				$(".duihuakuang").hide();
+				$(".zz").hide();
+			});
+			$(".butf").click(function(){
+				for(var i=0;i<4;i++){
+					document.getElementById('sp'+i).innerHTML="";
+				}
+				$(".duihuakuang").hide();
+				$(".zz").hide();
+			});
+	    }
+	    return a;
+	}
+	// var _id;
+	// 删除
+	var sc=function(data){
+	    var a = document.createElement('a');
+	    a.innerHTML="删除";
+	    a.href="#";
+	    a.className = "cksc";
+	    a.onclick=function(){
+	    	$(".zz").show();
+			$(".scdhk").show();
+			var b=$(this);
+			$(".zz").click(function(){
+				$(".scdhk").hide();
+				$(".zz").hide();
+			});
+			$(".buts").click(function(){
+				$(".scdhk").hide();
+				$(".zz").hide();
+				b.parent().parent().hide();
+		    	console.log(data);
+		    	// alert(data[0]);
+		    	$.ajax({
+			 		//请求地址
+			        url: dz+"deleteSymptom",
+			        //请求类型
+			        type: 'post',
+			        //返回数据类型
+			        // dataType:'json',
+			        //异步:true  同步:false
+			        async:true,
+			        //发送到服务器的数据。必须为 Key/Value 格式。
+			        data: {
+			        	"pid":data[0],
+			        },
+			        //请求成功后回调函数
+			        success: function(res) {
+			            console.log("成功！");
+			        },
+			        //请求失败后回调函数
+			        error:function(res){
+			        	alert("网络繁忙，请稍后。。。");
+			        }
+			    });
+			});
+			$(".butf").click(function(){
+				$(".scdhk").hide();
+				$(".zz").hide();
+			});
+	    }
+	    return a; 
+	}
+	
+	// 添加列表
+	var t = new Table("zzlb",6,6);
+	t.setColWidth(["5%","20%","25%","20%","15%","15%"]); 
+	t.setHead(["序号","症状名称","对应部位","问题个数","操作",""]);
+	t.setTemplate(["[0]", "[1]", "[2]", "[3]",ck,sc]);
+
+
+	// 请求数据
+	var search = document.getElementById('search');
+	search.onclick=function(){
+		// // 添加列表
+		var t = new Table("zzlb",6,6);
+		t.setColWidth(["5%","20%","25%","20%","15%","15%"]); 
+		t.setHead(["序号","症状名称","对应部位","问题个数","操作",""]);
+		t.setTemplate(["[5]", "[1]", "[2]", "[3]",ck,sc]);
+	
+		 $.ajax({
+	 		//请求地址
+	        url: dz+"PartManage_symptomAllList",
+	        //请求类型
+	        type: 'post',
+	        //返回数据类型
+	        dataType:'json',
+	        //异步:true  同步:false
+	        async:true,
+	        //发送到服务器的数据。必须为 Key/Value 格式。
+	        data: {
+	        	"name":si.value.trim(),
+	        },
+	        //请求成功后回调函数
+	        success: function(res) {
+	            var data = JSON.parse(res.msg);
+	
+	            for(var i=0; i<data.length;i++){
+	            
+		            data[i][5]=i+1;
+		            t.add(data[i],true);
+		            
+	            }
+	        },
+	        //请求失败后回调函数
+	        error:function(res){
+	        	alert("网络繁忙，请稍后。。。");
+	        }
+	    });	
+	}
+
+</script>

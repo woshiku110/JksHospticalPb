@@ -1,0 +1,448 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	/*font-family: "微软雅黑";
+	font-family: "Microsoft YaHei" ! important;*/
+}
+/*头部*/
+.bigdiv{
+	margin: 50px 14px;
+	width: 100%;
+	height: 100%;
+}
+/*添加医生*/
+.div_a .div_a_but_a{
+	width: 99px;
+	height: 34px;
+	border-radius:4px;
+	border: 0px;
+	background: #2872b7;
+	color: #ffffff;
+	font-size: 18px;
+}
+/*医生管理*/
+.div_b{
+	border-bottom: 1px solid #2872b7;
+	margin-bottom: 18px;
+}
+.div_b .div_b_p_a{
+	display: inline-block;
+	font-size: 18px;
+	color: #2872b7;
+	border-bottom: 3px solid #2872b7;
+	padding: 20px 0px 10px 0px;
+}
+/*搜索*/
+.div_c{
+	margin-bottom: 16px;
+
+}
+.div_c p,input,button{
+	display: inline;
+}
+.div_c .div_c_p_a,.div_c_p_b{
+	font-size: 16px;
+	color: #333;
+}
+.div_c .div_c_inp_a{
+	width: 164px;
+	height: 28px;
+	border-radius:4px;
+	border: 1px solid #ccc;
+	margin-right: 40px;
+}
+.div_c .div_c_inp_b{
+	width: 200px;
+	height: 28px;
+	border-radius:4px;
+	border: 1px solid #ccc;
+	margin-right: 50px;
+}
+
+
+/*列表*/
+#div_d{
+	border-top:2px solid #2872b7; 
+}
+
+
+/*遮罩页面*/
+.zhezhao{
+	width: 100%;
+	height: 100%;
+	background:rgba(0,0,0,0.3);
+	position: fixed;
+	z-index: 50;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+
+
+/*
+
+	添加医生信息页面
+
+*/
+/*big DIV*/
+.TjYsxx{
+	width: 985px;
+	height: 96%;
+	/*height: 654px;*/
+	position: fixed;
+	z-index: 100;
+	top: 8%;
+	left: 50%;	
+	margin-left: -478px;
+	/*margin-top: -48%;*/
+	display: none;
+}
+/*标题*/
+.TjYsxx .TjYsxx_a{
+	width: 100%;
+	background: #2872b7;
+	text-align: center;
+	height: 54px;
+}
+.TjYsxx .TjYsxx_a p{
+	width: 100%;
+	height: 54px;
+	line-height: 54px;
+	font-size: 22px;
+	color: #fff;
+}
+/*表单 DIV*/
+.TjYsxx .TjYsxx_b{
+	width: 100%;
+	height:70%;
+	background: #fff;
+	overflow-y:auto; 
+}
+.TjYsxx_b .TY_d{
+	width: 100%;
+	height: 40px;
+	/*white-space:nowrap;*/
+	padding-left: 26px;
+	box-sizing:border-box;
+}
+.TjYsxx_b .TY_d:nth-child(odd){
+	/*background: #f6fbff;*/
+}
+.TjYsxx_b .TY_d div{
+	display: inline-block;
+	/*margin: auto 10px;*/
+	white-space:nowrap;
+	/*overflow: hidden;*/
+	overflow:ellipsis;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 10px;
+}
+.TjYsxx_b .TY_d div p{
+	font-size: 12px;
+	height: 28px;
+	line-height: 40px;
+	/*margin-right: 12px;*/
+	display: inline-block;
+}
+.TjYsxx_b .TY_d div input{
+	width: 166px;
+	height: 28px;
+	line-height: 54px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+/*复选框*/
+.TjYsxx_b .TY_d .checkbox_p{
+	display: inline-block;
+	font-size: 12px;
+	height: 28px;
+	line-height: 40px;
+	width: 85px;
+	/*background: red;*/
+	/*margin: 0px auto;*/
+	/*text-align: center;*/
+}
+.TjYsxx_b .TY_d .TY_d_checkbox{
+	display: inline-block;
+	/*background: yellow;*/
+	height: 54px;
+	line-height: 54px;
+	padding: 0px;
+	margin-right: 7px;
+
+}
+.TjYsxx_b .TY_d_checkbox span{
+	display: inline-block;
+	font-size: 12px;
+	height: 12px;
+	line-height: 40px;
+	/*width: 70px;*/
+	/*margin: 21px 9px;*/
+	/*background: #000;*/
+}
+/*自定义复选框*/
+.TjYsxx .TY_d_checkbox label{
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -6px 0px;
+	background: url(../image/xuanxiangk.png);
+}
+.TjYsxx input[type=checkbox]:checked + label{
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		background: url(../image/xuanzhong.png);
+}
+
+
+
+
+
+/*label::before{
+	position: absolute;
+	top: 7px;
+	left: 6px;
+	content: "";
+	display: inline-block;
+	width: 2px;
+	height: 9px;
+	-moz-transform: rotate(-36deg);
+ 	-ms-transform: rotate(-36deg);
+  	-o-transform: rotate(-36deg);
+  	transform: rotate(-36deg);
+  	background: #fff;
+  	display: none;
+  	border-radius:10px; 
+}
+label::after{
+	position: absolute;
+	top: 2px;
+	left: 12px;
+	content: "";
+	display: inline-block;
+	width: 2px;
+	height: 15px;
+	-moz-transform: rotate(-154deg);
+  	-ms-transform: rotate(-154deg);
+  	-o-transform: rotate(-154deg);
+  	transform: rotate(-154deg);
+  	background: #fff;
+  	display: none;
+  	border-radius:10px; 
+}
+input[type=checkbox]:checked +label:after,input[type=checkbox]:checked +label:before{
+	display: inline-block;
+}*/
+
+
+/*底部按钮 DIV*/
+.TjYsxx .TjYsxx_c{
+	width: 100%;
+	background: #fff;
+	/*background: red;*/
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.TjYsxx .TjYsxx_c button{
+	width: 72px;
+	height: 30px;
+	border: 1px solid #2872b7;
+	background: #2872b7;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 4px;
+}
+
+/*
+
+	查看医生信息页面
+
+*/
+
+/*big DIV*/
+.CkYsxx{
+	width: 985px;
+	height: 96%;
+	/*height: 654px;*/
+	position: fixed;
+	z-index: 100;
+	top: 8%;
+	left: 50%;	
+	margin-left: -478px;
+	/*margin-top: -48%;*/
+	display: none;
+}
+/*标题*/
+.CkYsxx .CkYsxx_a{
+	width: 100%;
+	background: #2872b7;
+	text-align: center;
+	height: 54px;
+}
+.CkYsxx .CkYsxx_a p{
+	width: 100%;
+	height: 54px;
+	line-height: 54px;
+	font-size: 22px;
+	color: #fff;
+}
+/*表单 DIV*/
+.CkYsxx .CkYsxx_b{
+	width: 100%;
+	height:70%;
+	background: #fff;
+	overflow-y:auto; 
+}
+.CkYsxx .TY_d{
+	width: 100%;
+	height: 40px;
+	/*white-space:nowrap;*/
+	padding-left: 26px;
+	box-sizing:border-box;
+}
+.CkYsxx .TY_d:nth-child(odd){
+	/*background: #f6fbff;*/
+}
+/*列表*/
+.CkYsxx_b .TY_d div{
+	display: inline-block;
+	/*margin: auto 10px;*/
+	white-space:nowrap;
+	/*overflow: hidden;*/
+	overflow:ellipsis;
+	height: 54px;
+	line-height: 54px;
+	margin-right: 11px;
+}
+.CkYsxx_b .TY_d div p{
+	font-size: 12px;
+	height: 28px;
+	line-height: 54px;
+	margin-right: 12px;
+	display: inline-block;
+}
+/*复选框*/
+.CkYsxx_b .TY_d .checkbox_p{
+	display: inline-block;
+	font-size: 12px;
+	height: 28px;
+	line-height: 54px;
+	/*width: 100px;*/
+	/*background: red;*/
+	/*margin: 0px auto;*/
+	/*text-align: center;*/
+}
+.CkYsxx_b .TY_d .TY_d_checkbox{
+	display: inline-block;
+	/*background: yellow;*/
+	height: 54px;
+	line-height: 54px;
+	padding: 0px;
+	margin-right: 7px;
+
+}
+.CkYsxx_b .TY_d_checkbox span{
+	display: inline-block;
+	font-size: 12px;
+	height: 12px;
+	line-height: 54px;
+	/*width: 70px;*/
+	/*margin: 21px 9px;*/
+	/*background: #000;*/
+}
+/*自定义复选框*/
+.CkYsxx_b .TY_d_checkbox label{
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -6px 0px;
+	background: url(../image/xuanxiangk.png);
+}
+.CkYsxx_b input[type=checkbox]:checked + label{
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		background: url(../image/xuanzhong.png);
+}
+
+/*底部按钮 DIV*/
+.CkYsxx .CkYsxx_c{
+	width: 100%;
+	background: #fff;
+	/*background: red;*/
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.CkYsxx .CkYsxx_c button{
+	width: 72px;
+	height: 30px;
+	border: 1px solid #2872b7;
+	background: #2872b7;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 4px;
+}
+
+
+/*
+	提示框
+*/
+/*删除对话框*/
+.tishikuang{
+	background: #fff;
+	min-height: 230px;
+	height:auto;
+	width: 500px;
+	position: fixed;
+	z-index: 100;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -150px;
+	border: 2px solid #2872b7;
+
+	display: none;
+}
+.tishikuang p{
+	width: 100%;
+	font-size: 18px;
+	background:#2872b7;
+	color: #fff;
+	height:38px;
+	padding:0 10px;
+	line-height: 38px;
+	box-sizing:border-box;
+}
+.tishikuang h1{
+	font-size: 18px;
+	color: #2872b7;
+	margin: 40px auto;
+}
+.tishikuang button{
+	width: 72px;
+	height: 30px;
+	background: #2872b7;
+	color: #fff;
+	border: 0px;
+	border-radius: 5px;
+	font-size: 14px;
+	padding: 5px 10px;
+	margin: 30px 20px;
+}
+
+.cksc{
+	width: 46px;
+	height: 20px;
+	background: #2872b7;
+	color: #fff;
+	padding: 3px 10px;
+	text-align: center;
+	border: 0px;
+	border-radius: 4px;
+	font-size: 14px;
+}

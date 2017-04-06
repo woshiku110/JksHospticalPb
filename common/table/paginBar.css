@@ -1,0 +1,61 @@
+
+.paginBarCell{
+	height:22px;
+	width:100%;
+	padding:1px 0px;
+}
+
+.paginBarCell a{
+	width:20px;
+	height: 20px;
+	display: inline-block;
+	margin: 0px 1px 0px 0px;
+	border: 1px solid #F4F4F4;
+	border-radius:5px;
+	cursor:pointer;
+	background-image: url('./icon/shuaxin.png');
+	background-repeat:no-repeat;
+    background-position:center;
+}
+
+.paginBarCell a:link{border-color: #F4F4F4;}
+.paginBarCell a:visited{border-color: #F4F4F4;}
+.paginBarCell a:hover{border-color: #B7D2FF;}
+.paginBarCell a:active{border-color: #B7D2FF;}
+
+.line{
+	width:4px;
+	height: 22px;
+	display: inline-block;
+	background-image: url('./icon/line.png');
+	background-repeat:no-repeat;
+    background-position:center;
+}
+
+.showPageNum{
+	height: 22px;
+	display: inline-block;
+	margin: 0px 3px 0px 3px;
+	line-height: 22px;
+	vertical-align:top;
+	font-size: 14px;
+}
+
+.showPageNum input{
+	border-width: 1px;
+	border-style: solid;
+	border-color: #95B8E7;
+	margin: 0px 2px;
+	padding: 0px;
+	width: 2em;
+	height: auto;
+}
+
+.showPageNum span{
+	margin: 0px 1px;
+}
+
+
+
+
+

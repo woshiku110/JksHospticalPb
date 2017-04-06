@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>药品管理</title>
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="../../common/button/button.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="../../common/dialog/dialog.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="drugControl.css">
+    <script src="drugControl.js"></script>
+    <script src="scale.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div id="head" class="head" >
+        	<a id="add_drug" class ="button" icon="page/regionsManage/img/ico_add.png">添加药品</a>
+            <div class="add_drug" id="add_drug_div">
+                <div class="add_drug_head">
+                    <a>药品录入</a>
+                </div>
+                <div class="add_drug_middle">
+	                <table cellspacing="10">
+						<tr>
+			                <td class="td_title">药品编号:</td>
+			                <td class="col">
+				               <input id="drug_number" name="drug_number"/>
+			                </td>
+			                <td class="td_title">药品名称:</td>
+			                <td class="col">
+			                   <input id="drug_name" name="drug_name" />
+			                </td>
+						</tr>
+						<tr>
+							<td class="td_title">药品规格:</td>
+			                <td class="col">
+			                   <input id="drug_standard" name="drug_standard" />
+			                </td>
+			                <td class="td_title">药品单位:</td>
+			                <td class="col">
+			                   <input id="drug_unit" name="drug_unit" />
+			                </td>
+			                <td class="td_title">药品售价:</td>
+			                <td class="col">
+			                   <input id="drug_price" name="drug_price" />
+			                </td>
+			                <tr>
+			                <td class="td_title">
+			                 	<a id="addDrugButton"class="button" onclick="addDrugSummit();">添加</a>
+			                </td>
+			                <td class="td_title">
+			                 	<div id="result"></div>
+			                </td>
+						</tr>
+						</tr>
+					</table>
+					<div id="result"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content_head">
+                <a>药品搜索</a>
+            </div>
+            <div class="content_middle">
+               	  药品编号/药品名称:<input id="nameOrNumber" name="nameOrNumber" />
+               	 <a id="add_search" class ="button" onclick="searchDrug();" >搜&nbsp&nbsp索</a>
+            </div> 
+            <div class="content_select">
+                <div style="font-size:14px;display:inline;">当前药品总数:</div>
+                <div id="sum" style="display:inline;color:#3268AF"></div>
+            </div>
+            <div id="content_table"></div>
+        </div>
+    </div>
+  </body>
+</html>

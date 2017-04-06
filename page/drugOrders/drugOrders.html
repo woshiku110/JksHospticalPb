@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="drugOrders.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="drugOrders.js"></script>
+    <script type="text/javascript" src="parseDrugOrders.js"></script>
+    <script type="text/javascript" src="page.js"></script>
+</head>
+<body>
+        <div class="container">
+            <div class="up">
+                <div style="margin-top: 52px">
+                    <a id="bringOrder" class="button" onclick="bringOrderBtn()">取出药单</a>
+                    <a id="printTicket" class="button" disabled ="disabled" onclick=" printTicket()">打印小票</a>
+                    <a id="finish" class="button" disabled ="disabled" onclick="sortingEnd()">提交完成</a>
+                    <div class="up_head">
+                    <span>订单详情</span>
+                </div>
+               </div>
+            </div>
+            <div style="width: 1000px;height: 130px;background: white"></div>
+            <div class="middle" id="middle">
+                <div class="middle_table" id="middle_table">
+                    <div class="middle_table_up">
+                        <div class="middle_table_up_1">
+                            <div class="middle_table_up_1_1"><a>订单编号</a></div>
+                            <div class="middle_table_up_1_1"><a id="number"></a></div>
+                        </div>
+                        <div class="middle_table_up_1">
+                            <div class="middle_table_up_1_1"><a>患者姓名</a></div>
+                            <div class="middle_table_up_1_1"><a id="name"></a></div>
+                        </div>
+                        <div class="middle_table_up_1">
+                            <div class="middle_table_up_1_1"><a>患者性别</a></div>
+                            <div class="middle_table_up_1_1"><a id="sex"></a></div>
+                        </div>
+                        <div class="middle_table_up_1">
+                            <div class="middle_table_up_1_1"><a>联系方式</a></div>
+                            <div class="middle_table_up_1_1"><a id="telephone"></a></div>
+                        </div>
+                    </div>
+                    <div class="middle_table_down">
+                        <span style="line-height: 42px;margin-left: 4%; ">家庭住址</span>
+                        <div class="middle_table_down_address">
+                            <a id="address"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="middle_table_bottom" >
+                    <div class="middle_table_bottom_head" >
+                        <span style="margin-left: 8px;">当前药品种数:</span>
+                        <a id="sum" style="color: #2872b7"></a>
+                    </div>
+                    <div id="middle_table_bottom"></div>
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>

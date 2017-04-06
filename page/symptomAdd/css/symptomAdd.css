@@ -1,0 +1,217 @@
+*{margin: 0;padding: 0}
+.container{
+    width: 1000px;
+   /* height: 630px;*/
+    margin: 0 0 0 14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    /*background: #f3f3f3;*/
+}
+.up{
+    width: 100%;
+    height:182px;
+   /* background: red;*/
+}
+.up_head{
+    width: 100%;
+    height: 79px;
+    border-bottom: 1px solid #2872B7;
+}
+.up_head_1{
+    width: 72px;
+    height: 38px;
+    font-size: 18px;
+    border-bottom: 3px solid #2872B7;
+    line-height:38px;
+    margin-top: 38px;
+    float: left;
+    color: #2872B7;
+}
+.up_left{
+    float: left;
+   width: 65%;
+   /* height: 130px;*/
+   /* background: pink;*/
+}
+.up_left_1{
+   /* width: 70%;*/
+    height: 34px;
+  /*  background: deeppink;*/
+    margin-top: 10px;
+  /*  line-height: 28px;*/
+    font-size: 14px;
+}
+.up_left_1 input{
+    width: 200px;
+    height: 20px;
+    border: 1px solid #BBBBBB;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 5px;
+}
+.up_right{
+    float: right;
+    width:35%;
+    font-size: 14px;
+}
+.up_right span{
+    display: inline-block;
+   margin-top: 20px;
+}
+#localImag{
+    width: 78px;
+    height: 78px;
+   margin: -27px 0 0 72px;
+    cursor: pointer;
+}
+.title{
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.down_head{
+    width: 100%;
+    height: 50px;
+   border-bottom: 1px solid #2872B7;
+    font-size: 18px;
+    color: #2872B7;
+}
+.down_head a{
+    display: inline-block;
+    width: 72px;
+    height: 40px;
+    text-align: center;
+   line-height: 40px;
+    margin-top: 7px;
+    border-bottom: 3px solid #2872B7;
+}
+.down_content{
+    font-size: 14px;
+}
+.down_content_question{
+    margin-bottom: 30px;
+}
+.down_content_question_up{
+   /*padding-bottom: 18px;*/
+}
+.down_content_question_up a{
+    display: inline-block;
+    margin-left: 10px;
+}
+.down_content_question_up_img{
+    width: 19px;
+    height: 19px;
+    background: url("../img/ico_delete.png")no-repeat;
+    display: inline-block;
+    margin: 15px 0 0 0;
+}
+.down_content_question_down{
+    padding-bottom: 56px;
+}
+.down_content_question_down input{
+    margin-top: 10px;
+}
+.down_content_question_down input{
+    width: 83px;
+    height: 30px;
+    padding-left: 6px;
+}
+.down_content_question_down a{
+    display: inline-block;
+    margin-left: 34px;
+}
+.down_bottom{
+    margin-top: 20px;
+}
+.add {
+    display: none;
+    width: 571px;
+    height: 380px;
+    background: white;
+    position: absolute;
+    margin:5% 0 0 5%;
+    z-index: 10000;
+    box-shadow: 2px 2px 4px #bebebe;
+}
+.add_head{
+    width: 100%;
+    height: 37px;
+    background: #1B5790;
+    color: white;
+    font-size: 18px;
+    line-height: 37px;
+}
+.add_head a{
+    display: inline-block;
+    margin-left: 10px;
+}
+.add_middle_left{
+    width: 38%;
+    float: left;
+    height: 297px;
+    margin-left:10px;
+}
+.add_middle_left a{
+    display: inline-block;
+    width: 67px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.add_middle_left_content{
+    border: 1px solid #1B5790 ;
+    height: 255px;
+    overflow: auto;
+}
+.add_middle_middle{
+    width: 20%;
+    float: left;
+    height: 297px
+}
+.add_middle_middle_img{
+    width: 64px;
+    height: 38px;
+    border: 1px solid #BBBBBB;
+    margin: 65px 0 -50px 24px;
+    text-align: center;
+    line-height: 38px;
+    color: #BBBBBB;
+    font-size: 20px;
+}
+.add_middle_right{
+    width:38%;
+    float: right;
+    height: 297px;
+    margin-right: 10px;
+}
+.add_middle_right a{
+    display: inline-block;
+    width: 67px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.add_bottom a{
+    width: 60px;
+    height: 22px;
+    display: inline-block;
+    background: #1B5790;
+    border-radius: 4px;
+    text-align: center;
+    line-height:22px ;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin: 10px -37% 0  39%;
+    cursor: pointer;
+}
+#file{
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    top: 13%;
+}
+#preview{
+    width:78px;
+    height:78px;
+    background-image: url("../img/ico_add_photo.png");
+}

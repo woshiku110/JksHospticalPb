@@ -1,0 +1,16 @@
+
+.tableContiner{
+	width: 100%;
+	border: 1px solid #95B8E7;
+}
+
+.tableDiv{
+	width: cale(100% - 22px);
+	height: 700px;
+}
+
+.paginDiv{
+	width: cale(100% - 22px);
+	padding: 10px;
+	background-color: #F4F4F4;
+}

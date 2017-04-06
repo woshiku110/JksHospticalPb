@@ -1,0 +1,57 @@
+
+.button{
+	display: inline-block;
+    border-radius :4px;
+    background:#3268AF;
+    text-align :center;
+    color:white;
+    font-size:18px;
+	font-family:'Microsoft YaHei';
+	font-weight:400;
+	border:none;
+	cursor:pointer;
+	padding:0px 9px 0 10px;
+	height:30px;
+	line-height:29px;
+	-webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.button:hover{
+    background:#264E85;
+}
+.button:active{
+    background:#1E3450;
+}
+.button span{
+	display:inline-block;
+	height:18px;
+	width:18px;
+	margin-top:-4px;
+	margin-right:5px;
+	vertical-align:middle;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:100% 100%;
+}
+
+@-moz-document url-prefix(){
+	.button{
+		height:27px;
+		line-height:27px;
+		padding-bottom:3px;
+	}
+	.button span{
+		margin-top:-2px;
+	}
+}
+
+.disabledButton{
+	background:#8BABCF;
+	color:white;
+}
+.disabledButton:hover{
+	background:#8BABCF;
+}

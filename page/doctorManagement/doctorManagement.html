@@ -1,0 +1,1190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="scroll_bar/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" type="text/css" href="css/doctorManagement.css">
+	<script type="text/javascript" src="../../common/js/json2.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="scroll_bar/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="scroll_bar/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script type="text/javascript" src="scroll_bar/js/jquery.mCustomScrollbar.min.js"></script>
+	<script type="text/javascript" src="../../common/table/table.js"></script>
+	<script type="text/javascript" src="../../common/button/button.js"></script>
+	<script type="text/javascript" src="js/dropDownInput.js"></script>
+	<script type="text/javascript" src="js/dropManagement.js"></script>
+	<style type="text/css">
+		#mCSB_1_container{
+			margin-right: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="bigdiv">
+		<div class="div_a">
+			<button class="div_a_but_a">添加医生</button>
+		</div>
+		<div class="div_b">
+			<p class="div_b_p_a">医生管理</p>
+		</div>
+		<div class="div_c"> 
+			<p class="div_c_p_a">医生姓名</p>
+			<input class="div_c_inp_a" type="text"/>
+			<p class="div_c_p_b">所属医院</p>
+			<input class="div_c_inp_b" type="text" list="datalist_1" id="si"/>
+			<datalist id="datalist_1">
+				<!-- <option>张三</option>
+				<option>李四</option>
+				<option>王五</option> -->
+			</datalist>
+			<a id="search" class="button" onclick="shuju()">搜索</a>
+			<!-- <button class="div_c_but_a">搜索</button> -->
+		</div>
+		<div id="lb" class="lb"></div>
+		<div id="div_d"></div>
+
+		<!-- 遮罩 -->
+		<div class="zhezhao"></div>
+
+		<!-- 添加医生信息DIV -->
+		<div class="TjYsxx" id="id_TjYsxx" style="width:870px;">
+			<div class="TjYsxx_a">
+				<p>添加医生信息</p>
+			</div>
+			<div class="TjYsxx_b" style="padding-top: 30px;">
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_a" style="height:50px;">
+						<p>医生姓名</p>
+						<input type="text" class="Tj_inp" style="width: 200px;"/>
+						<p style="color: #ff0303;">*</p>
+					</div>
+					<div class="TY_d_a" style="margin-left: 25px;">
+						<p>性别</p>
+						<input  type="text" class="Tj_inp" style="width: 130px;" list="datalist_3" data-options="editable:false" placeholder="请选择" />
+						<datalist id="datalist_3">
+							<option>男</option>
+							<option>女</option>
+						</datalist>
+					</div>
+					<div class="TY_d_b" style="margin-left: 37px;">
+						<p>科室</p>
+						<input type="text" class="Tj_inp" style="width: 151px;"/>
+					</div>
+					
+				</div>
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_c" style="margin-right:0xp;">
+						<p>所属医院</p>
+						<input type="text" list="datalist_2" style="width: 200px; " class="Tj_inp" />
+						<datalist id="datalist_2">
+						</datalist>
+					</div>
+					<div class="TY_d_a" style="margin-left: 11px;">
+						<p>联系方式</p>
+						<input type="text" style="width: 130px;" class="Tj_inp"/>
+						<!-- <p style="color: #ff0303;">*必填</p> -->
+					</div>
+					<div class="TY_d_b" style="margin-left: 12px; " >
+						<p>医生职务</p>
+						<input type="text" class="Tj_inp"  style="width:151px;"/>
+					</div>
+					
+				</div>
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_c">
+						<p>专治病种</p>
+						<input type="text" style="width: 200px;" class="Tj_inp"/>
+					</div>
+					<div class="TY_d_a" style="margin-left: 11px;">
+						<p>电子邮箱</p>
+						<input type="text" style="width: 130px;" class="Tj_inp"/>
+						<p style="color: #ff0303;">*</p>
+					</div>
+					<div class="TY_d_b" style="margin-left: 3px;">
+						<p>身份证号</p>
+						<input type="text" style="width: 151px;" class="Tj_inp"/>
+						<p style="color: #ff0303;">*</p>
+					</div>
+				</div>
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_c" style="margin-left: 18px;">
+						<p>Q&nbsp;&nbsp;&nbsp;Q</p>
+						<input type="text" style="width: 200px;" class="Tj_inp"/>
+					</div>
+					<div class="TY_d_a" style="margin-left: 11px;">
+						<p>医生分类</p>
+						<input type="text" style="width: 130px;" class="Tj_inp" list="ysfl" placeholder="请选择"/>
+						<datalist id="ysfl">
+							<option>中医</option>
+							<option>西医</option>
+							<option>心理咨询师</option>
+						</datalist>
+					</div>
+				</div>
+				<div class="TY_d" id="TY_d_id" style="margin-top: 10px;">
+					<div class="TY_d_checkbox" style="width:85px;" >
+						<p class="checkbox_p" style=" margin-left: 10px;">可提供的服务：</p>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox0" calss="class_inp_checkbox" style="display: none;" value="smfw"/>
+						<label for="id_inp_checkbox0" value="smfw"></label>
+						<span>上门服务</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox1" calss="class_inp_checkbox" style="display: none;" value="apzy"/>
+						<label for="id_inp_checkbox1"></label>
+						<span>安排住院</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox2" calss="class_inp_checkbox" style="display: none;" value="apss"/>
+						<label for="id_inp_checkbox2"></label>
+						<span>安排手术</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox3" calss="class_inp_checkbox" style="display: none;" value="zz"/>
+						<label for="id_inp_checkbox3"></label>
+						<span>坐诊</span>
+					</div>
+				</div>
+				<div class="TY_d">
+					<div class="TY_d_checkbox">
+						<p class="checkbox_p">接受咨询的形式：</p>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox4" calss="class_inp_checkbox" style="display: none;" value="wxzx"/>
+						<label for="id_inp_checkbox4"></label>
+						<span>微信咨询</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox5" calss="class_inp_checkbox" style="display: none;" value="dhzx"/>
+						<label for="id_inp_checkbox5"></label>
+						<span>电话咨询</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox6" calss="class_inp_checkbox" style="display: none;" value="ychz"/>
+						<label for="id_inp_checkbox6"></label>
+						<span>远程会诊</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox7" calss="class_inp_checkbox" style="display: none;" value="mz"/>
+						<label for="id_inp_checkbox7"></label>
+						<span>面诊</span>
+					</div>
+				</div>
+				<div class="TY_d" style="margin-bottom: 20px;">
+					<div class="TY_d_checkbox" >
+						<p class="checkbox_p">可以接诊的地点：</p>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox8" calss="class_inp_checkbox" style="display: none;" value="bks"/>
+						<label for="id_inp_checkbox8"></label>
+						<span>本科室</span>
+					</div>
+					<div class="TY_d_checkbox" style="margin-left: 12px;">
+						<input type="checkbox" id="id_inp_checkbox9" calss="class_inp_checkbox" style="display: none;" value="qtyljg"/>
+						<label for="id_inp_checkbox9"></label>
+						<span>其他医疗机构</span>
+					</div>
+					<div class="TY_d_checkbox">	
+						<input type="checkbox" id="id_inp_checkbox10" calss="class_inp_checkbox" style="display: none;" value="qyyws"/>
+						<label for="id_inp_checkbox10"></label>
+						<span>企业医务室</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox11" calss="class_inp_checkbox" style="display: none;" value="yxfwzxzx"/>
+						<label for="id_inp_checkbox11"></label>
+						<span style="width: 122px;">医学服务技术咨询中心</span>
+					</div>
+				</div>
+				<div class="TY_d" style="height: 130px; padding-left: 60px; margin-top:10px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p style="false:left;">个人资历</p>
+					</div>
+					<div style="margin: 0px;  height: 120px; overflow: hidden;margin-left: 10px;">
+						<textarea style="width: 655px;height: 100px; false:left; margin-top: 15px;" class="Tj_inp"></textarea> 
+					</div>
+				</div>
+				<div class="TY_d" style="height: 120px; padding-left: 60px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p style="false:left;line-height: 20px;height20px;">学术地位</p>
+					</div>
+					<div style="margin: 0px;  height: 120px; overflow: hidden; margin-left: 10px;">
+						<textarea  style="width: 655px;height: 100px; false:left; margin-top: 5px;"  class="Tj_inp"></textarea> 
+					</div>
+				</div>
+				<div class="TY_d" style="height: 120px; padding-left: 60px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p style="false:left;line-height: 20px;height20px;">经典病例</p>
+					</div>
+					<div style="margin: 0px;  height: 120px; overflow: hidden; margin-left: 10px;">
+						<textarea  style="width: 655px;height: 100px; false:left; margin-top:5px;"  class="Tj_inp"></textarea> 
+					</div>
+				</div>
+				<div class="TY_d" style="height: 120px;padding-left: 14px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p style="false:left;line-height: 20px;height20px;">可提供的健康讲座</p>
+					</div>
+					<div style="margin: 0px;  height: 120px; overflow: hidden; margin-left: 8px;">
+						<textarea  style="width: 653px;height: 100px; false:left; margin-top: 5px;"  class="Tj_inp"></textarea> 
+					</div>
+				</div>
+			</div>
+			<div class="TjYsxx_c" style="padding-bottom: 10px;">
+				<button class="TjYsxx_c_butT" style="margin-right: 12px;">添加</button>
+				<button class="TjYsxx_c_butQ" style="background: #fff;color: #2872b7;margin-left: 12px;">取消</button>
+			</div>
+		</div>
+		<!-- 查看医生信息DIV -->
+		<div class="CkYsxx" id="id_CkYsxx" style="width:870px;">
+			<div class="CkYsxx_a">
+				<p>查看医生信息</p>
+			</div>
+			<div class="CkYsxx_b" style="padding-top: 30px;">
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_a">
+						<p>医生姓名</p>
+						<p style="width: 200px;" class="Ck_p0" >张三光</p>
+					</div>
+					<div class="TY_d_a"  style="margin-left: 25px;">
+						<p>性别</p>
+						<p style="width: 130px;" class="Ck_p1" >男</p>
+					</div>
+					<div class="TY_d_b" style="margin-left: 37px;">
+						<p>科室</p>
+						<p style="width: 151px;" class="Ck_p2">心血管内科</p>
+					</div>
+					
+				</div>
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_c" style="margin-right:0xp;">
+						<p>所属医院</p>
+						<p style="width: 200px;" class="Ck_p3">天津市长安医院</p>
+					</div>
+					<div class="TY_d_a" style="margin-left: 3px;">
+						<p>联系方式</p>
+						<p style="width: 130px;" class="Ck_p4">4008823823</p>
+					</div>
+					<div class="TY_d_b"style="margin-left: 12px; ">
+						<p>医生职务</p>
+						<p style="width: 151px;" class="Ck_p5">科长</p>
+					</div>
+					
+				</div>
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_c">
+						<p>专治病种</p>
+						<p style="width: 200px;" class="Ck_p6">心脏病</p>
+					</div>
+					<div class="TY_d_a" style="margin-left: 3px;">
+						<p>电子邮箱</p>
+						<p style="width: 130px;" class="Ck_p7" >1234567890@qq.com</p>
+					</div>
+					<div class="TY_d_b" style="margin-left: 12px;">
+						<p>身份证号</p>
+						<p style="width: 151px;" class="Ck_p8">999999999999999999</p>
+					</div>
+				</div>
+				<div class="TY_d" style="margin-left: 40px;">
+					<div class="TY_d_c" style="margin-left: 18px;">
+						<p>Q&nbsp;&nbsp;&nbsp;Q</p>
+						<p style="width: 200px;" class="Ck_p9">8888888888</p>
+					</div>
+					<div class="TY_d_a" style="margin-left: 3px;">
+						<p>医生分类</p>
+						<p style="width: 200px;" class="Ck_p10">8888888888</p>
+					</div>
+				</div>
+				<div class="TY_d" id="TY_d_id" style="margin-top: 10px;">
+					<div class="TY_d_checkbox" style="width:85px;">
+						<p class="checkbox_p" style=" margin-left: 11px;">可提供的服务</p>
+					</div>
+					<div class="TY_d_checkbox"style=" margin-left: 11px;">
+						<input type="checkbox" id="id_inp_checkbox0_0" calss="Ck_class_inp_checkbox" style="display: none;" value="smfw" disabled="disabled" />
+						<label for="id_inp_checkbox0_0"></label>
+						<span>上门服务</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox1_1" calss="Ck_class_inp_checkbox" style="display: none;" value="apzy" disabled="disabled"/>
+						<label for="id_inp_checkbox1_1"></label>
+						<span>安排住院</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox2_2" calss="Ck_class_inp_checkbox" style="display: none;" value="apss" disabled="disabled"/>
+						<label for="id_inp_checkbox2_2"></label>
+						<span>安排手术</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox3_3" calss="Ck_class_inp_checkbox" style="display: none;" value="zz" disabled="disabled"/>
+						<label for="id_inp_checkbox3_3"></label>
+						<span>坐诊</span>
+					</div>
+				</div>
+				<div class="TY_d">
+					<div class="TY_d_checkbox">
+						<p class="checkbox_p">接受咨询的形式</p>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox4_4" calss="Ck_class_inp_checkbox" style="display: none;" value="wxzx" disabled="disabled"/>
+						<label for="id_inp_checkbox4_4"></label>
+						<span>微信咨询</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox5_5" calss="Ck_class_inp_checkbox" style="display: none;" value="dhzx" disabled="disabled"/>
+						<label for="id_inp_checkbox5_5"></label>
+						<span>电话咨询</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox6_6" calss="Ck_class_inp_checkbox" style="display: none;" value="ychz" disabled="disabled"/>
+						<label for="id_inp_checkbox6_6"></label>
+						<span>远程会诊</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox7_7" calss="Ck_class_inp_checkbox" style="display: none;" value="mz" disabled="disabled"/>
+						<label for="id_inp_checkbox7_7"></label>
+						<span>面诊</span>
+					</div>
+				</div>
+				<div class="TY_d">
+					<div class="TY_d_checkbox">
+						<p class="checkbox_p">可以接诊的地点</p>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox8_8" calss="Ck_class_inp_checkbox" style="display: none;" value="bks" disabled="disabled"/>
+						<label for="id_inp_checkbox8_8"></label>
+						<span>本科室</span>
+					</div>
+					<div class="TY_d_checkbox" style="margin-left: 10px;">
+						<input type="checkbox" id="id_inp_checkbox9_9" calss="Ck_class_inp_checkbox" style="display: none;" value="qtyljg" disabled="disabled"/>
+						<label for="id_inp_checkbox9_9"></label>
+						<span>其他医疗机构</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox10_10" calss="Ck_class_inp_checkbox" style="display: none;" value="qyyws" disabled="disabled"/>
+						<label for="id_inp_checkbox10_10"></label>
+						<span>企业医务室</span>
+					</div>
+					<div class="TY_d_checkbox">
+						<input type="checkbox" id="id_inp_checkbox11_11" calss="Ck_class_inp_checkbox" style="display: none;" value="yxfwzxzx" disabled="disabled"/>
+						<label for="id_inp_checkbox11_11"></label>
+						<span style="width: 122px;">医学服务技术咨询中心</span>
+					</div>
+				</div>
+				<div class="TY_d" style="height: 130px; padding-left: 60px; margin-top:10px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p style="false:left;">个人资历</p>
+					</div>
+					<div style="margin: 0px;  height: 120px;  margin-left: 10px;">
+						<textarea style="width: 655px;height:100px;" readonly="readonly"class="Ck_p11" >十年集团化企业财务总监工作经验</textarea>
+					</div>
+				</div>
+				<div class="TY_d" style="height: 130px; padding-left: 60px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p  style="false:left;">学术地位</p>
+						
+					</div>
+					<div style="margin: 0px;  height: 120px;  margin-left: 10px;">
+						<textarea style="width: 655px;height:100px;" readonly="readonly" class="Ck_p12" >现任中华医学会妇产科专业委员会妇科内镜学组委员、中国医师协会妇科内镜技术推广专家委员会副主任委员</textarea>
+					</div>
+				</div>
+				<div class="TY_d" style="height: 130px; padding-left: 60px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p  style="false:left;">经典病例</p>
+						
+					</div>
+					<div  style="margin: 0px;  height: 120px;  margin-left: 10px;">
+						<textarea style="width: 655px;height:100px;" readonly="readonly" class="Ck_p13" >开创了用于治疗白喉的血清疗法</textarea>
+					</div>
+				</div>
+				<div class="TY_d" style="height: 130px; padding-left: 15px;">
+					<div style="margin: 0px; height: 120px;overflow: hidden;">
+						<p  style="false:left;">可提供的健康讲座</p>
+						
+					</div>
+					<div  style="margin: 0px;  height: 120px;  margin-left: 10px;">
+						<textarea style="width: 655px;height:100px;" readonly="readonly" class="Ck_p14" >健康教育知识讲座 地点：郑集乡卫生院健康教育室</textarea>
+					</div>
+				</div>
+			</div>
+			<div class="CkYsxx_c" style="padding-bottom: 10px;">
+				<button class="CkYsxx_c_butX" style="margin-right: 12px;">修改</button>
+				<button class="CkYsxx_c_butQ" style="background: #fff;color: #2872b7;margin-left: 12px;">取消</button>
+			</div>
+		</div>
+		<div class="tishikuang" >
+			<p>症状信息</p>
+			<div style="text-align: center;">
+				<h1>您确定要删除该条信息吗？</h1>
+				<button class="tishikuang_but">确定</button>
+				<button class="tishikuang_Qxbu" style="display: none;">取消</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	
+	var dz = "http://192.168.0.202:8080/jfs1.1/manage/";
+	//  自定义滚动条
+	(function($){
+        $(window).load(function(){
+            $(".TjYsxx_b").mCustomScrollbar();
+        });
+    })(jQuery);
+    (function($){
+        $(window).load(function(){
+            $(".CkYsxx_b").mCustomScrollbar();
+        });
+    })(jQuery);
+
+/*
+
+	页面初始
+
+*/ 
+	// 下拉搜索
+	var datalist_1 = document.getElementById("datalist_1");
+	$.ajax({
+ 		//请求地址
+        url: dz+"HospitalManage_getHospitalList",
+        //请求类型
+        type: 'post',
+        //返回数据类型
+        dataType:'json',
+        //异步:true  同步:false
+        async:true,
+        //发送到服务器的数据。必须为 Key/Value 格式。
+        data: {},
+        //请求成功后回调函数
+        success: function(res) {
+        	var d = JSON.parse(res.msg);
+        	console.log(d.length);
+        	for(var i=0; i<d.length;i++){
+        		var opt = document.createElement("option");
+        		opt.innerHTML=d[i][1]; 
+        		datalist_1.appendChild(opt);
+        	}
+        },
+	});
+	// 模糊搜索
+	var si = document.getElementById("si");
+	changeDropDownInput(si);
+	si.autoMatch = false;
+	si.visibleTemplate = function(option){
+		return option[1];
+	}
+	si.oninput = function(){
+		$.ajax({
+	 		//请求地址
+	        url: dz+"HospitalManage_getHospitalList",
+	        //请求类型
+	        type: 'post',
+	        //返回数据类型
+	        dataType:'json',
+	        //异步:true  同步:false
+	        async:true,
+	        //发送到服务器的数据。必须为 Key/Value 格式。
+	        data: {
+	        	'name':si.value.trim(),
+	        },
+	        //请求成功后回调函数
+	        success: function(res) {
+	        	if(res.success){
+	        		si.dataSource = JSON.toObject(res.msg);
+	        		si.flush();
+	        	}
+	        	else{
+	        		si.dataSource = [];
+	        		si.flush();
+	        	}
+	        },
+	        fail: function(){
+				si.dataSource = [];
+	        	si.flush();
+	        }
+		});
+	}
+
+	function shuju(){
+		// 列表
+		var t = new Table("div_d",7,8);
+		t.setColWidth(["5%","15%","25%","15%","16%","7%","7%","10%"]); 
+		t.setHead(["序号","姓名","所属医院","科室","职务","","",""]);
+		t.setTemplate(["[5]", "[1]", "[2]", "[3]","[4]",ck,sc,mm]);
+
+		$.ajax({
+	 		//请求地址
+	        url: dz+"DoctorManage_searchDoctor",
+	        //请求类型
+	        type: 'post',
+	        //返回数据类型
+	        dataType:'json',
+	        //异步:true  同步:false
+	        async:true,
+	        //发送到服务器的数据。必须为 Key/Value 格式。
+	        data: {
+	        	"id":document.getElementById("si").hitOption[0],
+	        	"name":$(".div_c .div_c_inp_a").val().trim(),    	
+	        },
+	        //请求成功后回调函数
+	        success: function(res) {
+	            // console.log(res.msg);
+
+	            var d = JSON.parse(res.msg);
+	            for(var i=0; i<d.length;i++){
+	            	d[i][5]=i+1;
+	            	t.add(d[i],true);
+	            }
+	            console.log(d);
+	        },
+	        //请求失败后回调函数
+	        error:function(res){
+	        	alert("网络繁忙，请稍后。。。");
+	        }
+		});	
+	}
+
+	
+
+
+/*
+
+	添加医生信息
+
+*/ 
+	// 添加医生 Button
+	$('.div_a_but_a').click(function(){
+		
+		$('.zhezhao').show();
+		$('.TjYsxx').show();
+		$('.TjYsxx_a p').text('添加医生信息');
+		// 下拉搜索
+		var datalist_2 = document.getElementById("datalist_2");
+		$.ajax({
+	 		//请求地址
+	        url: dz+"HospitalManage_getHospitalList",
+	        //请求类型
+	        type: 'post',
+	        //返回数据类型
+	        dataType:'json',
+	        //异步:true  同步:false
+	        async:true,
+	        //发送到服务器的数据。必须为 Key/Value 格式。
+	        data: {},
+	        //请求成功后回调函数
+	        success: function(res) {
+	        	var d = JSON.parse(res.msg);
+	        	console.log(d);
+	        	for(var i=0; i<d.length;i++){
+	        		var opt = document.createElement("option");
+	        		opt.innerHTML=d[i][1]; 
+	        		datalist_2.appendChild(opt);
+	        	}
+	        	// 添加医生信息----- 添加 Button
+				$('.TjYsxx_c_butT').click(function(){
+					if($(this).text().trim()==="添加"){
+						console.log("1111");
+						var arr_inp="";
+						// 必选的 input 的索引值 姓名(0)、电子邮箱(6)、身份证号(7)
+						// 首先判断必填选项不能为空
+						if ($('.TjYsxx .Tj_inp').eq(0).val().trim()==""||$('.TjYsxx .Tj_inp').eq(7).val().trim()==""||$('.TjYsxx .Tj_inp').eq(8).val().trim()=="") {
+							tishikuang("提示框","必选项不能为空！");
+							return;
+						}
+						// 判断姓名长度大于等于2且小于等于5
+						if($('.TjYsxx .Tj_inp').eq(0).val().trim().length>5||$('.TjYsxx .Tj_inp').eq(0).val().trim().length<2){
+							tishikuang("姓名提示框","姓名长度2到5个字");
+							return;
+						}
+						if($('.TjYsxx .Tj_inp').eq(1).val().trim()!="男" && $('.TjYsxx .Tj_inp').eq(1).val().trim()!="女" ){
+							tishikuang("性别提示框","请选择您的性别");
+							return;
+						}
+						// 科室怎么搞----先让它小于十大于三吧··
+						if($('.TjYsxx .Tj_inp').eq(2).val().trim().length>10||$('.TjYsxx .Tj_inp').eq(2).val().trim().length<2){
+							tishikuang("科室提示框","科室长度2到10个字");
+							return;
+						}
+						// 所属医院----不为空就行了吧··
+						if($('.TjYsxx .Tj_inp').eq(3).val().trim()==""){
+							tishikuang("所属医院提示框","请填写正确的医院名称");
+							return;
+						}
+						// 联系方式-----正则···
+						// 手机：第一位必须是1，第二位必须是3578中的一个，后面跟九位，总共11位
+						// 座机：区号（前面一个0，后面跟2-3位数字），电话号码（7-8位数字），分机号（一般都是3位数字）
+						// 比如：0111-11111111-111  或者  011-1111111-111
+						if(!(/^1[3578]\d{9}$/).test($('.TjYsxx .Tj_inp').eq(4).val().trim())&&!(/^((0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/).test($('.TjYsxx .Tj_inp').eq(4).val().trim())){
+							tishikuang("联系方式提示框","您的联系方式不正确");
+							return;
+						}
+						// 职务---最多7个字 最少2个字
+						if($('.TjYsxx .Tj_inp').eq(5).val().trim().length>7||$('.TjYsxx .Tj_inp').eq(5).val().trim().length<2){
+							tishikuang("职务提示框","字数为2到7个字");
+							return;
+						}
+						// 专治病种---最多7个字 最少2个字
+						if($('.TjYsxx .Tj_inp').eq(6).val().trim().length>7||$('.TjYsxx .Tj_inp').eq(6).val().trim().length<2){
+							tishikuang("专治病种提示框","字数为2到7个字");
+							return;
+						}
+						// 电子邮箱
+						// 验证规则：姑且把邮箱地址分成“第一部分@第二部分”这样
+						// 第一部分：由字母、数字、下划线、短线“-”、点号“.”组成，
+						// 第二部分：为一个域名，域名由字母、数字、短线“-”、域名后缀组成，
+						// 而域名后缀一般为.xxx或.xxx.xx，一区的域名后缀一般为2-4位，如cn,com,net，现在域名有的也会大于4位
+						// 比如：1@1.11 或者 1@1.111 或者 1@1.11.11 或者 1@1.111.11 或者 1@1.11.111 或者 1@1.111.111
+						if(!(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/).test($('.TjYsxx .Tj_inp').eq(7).val().trim())){
+							tishikuang("邮箱提示框","邮箱格式不正确");
+							return;
+						}
+						// 身份证号：为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X  
+						// 比如： 111111111111111 或者 111111111111111111 或者 11111111111111111x
+						if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/).test($('.TjYsxx .Tj_inp').eq(8).val().trim())){
+							tishikuang("身份证号提示框","证件格式不正确");
+							return;
+						}
+						// Q Q
+						// 验证规则：大于等于5，小于等于10 /^[1-9]d{4,8}$/
+						if(!(/^\d{5,10}$/).test($('.TjYsxx .Tj_inp').eq(9).val().trim())){
+							tishikuang("Q Q提示框","Q Q格式不正确");
+							return;
+						}
+						// 医生分类
+						if($('.TjYsxx .Tj_inp').eq(10).val().trim()!="中医"&&$('.TjYsxx .Tj_inp').eq(10).val().trim()!="西医"&&$('.TjYsxx .Tj_inp').eq(10).val().trim()!="心理咨询师"){
+							tishikuang("医生分类提示框","请选择医生类别");
+							return;
+						}
+						// 把多选按钮的值放入 arr_inp
+						if($('.TjYsxx_b input[type=checkbox]:checked').length==0){
+							arr_inp="";
+						}else{
+							for(var i=0; i<$('.TjYsxx_b input[type=checkbox]:checked').length;i++){
+								if($('.TjYsxx_b input[type=checkbox]:checked').length==1){
+									arr_inp += "["+'["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+"]";
+								}else{
+									if(i==0){
+										arr_inp += "["+'["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+",";
+										continue;
+									}
+									if(i==$('.TjYsxx_b input[type=checkbox]:checked').length-1){
+										arr_inp += '["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+"]";
+										break;
+									}
+									arr_inp += '["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+",";
+								}
+							}
+						}
+						
+						// console.log(arr_inp);
+						var yyid;
+						for(var i=0;i<d.length;i++){
+							if(d[i][1]==$('.TjYsxx .Tj_inp').eq(3).val().trim()){
+								yyid = d[i][0];
+							}
+						}
+
+						var type;
+						if($('.TjYsxx .Tj_inp').eq(10).val().trim()=="西医"){
+							type = 1;
+							return;
+						}else{
+							if($('.TjYsxx .Tj_inp').eq(10).val().trim()=="中医"){
+								type = 2;
+							}else{
+								type = 3;
+							}
+						}
+						console.log("医院的ID是:"+yyid)
+						$.ajax({
+					 		//请求地址
+					        url: dz+"DoctorManage_addDoctor",
+					        //请求类型
+					        type: 'post',
+					        //返回数据类型
+					        dataType:'json',
+					        //异步:true  同步:false
+					        async:true,
+					        //发送到服务器的数据。必须为 Key/Value 格式。
+					        data: {
+					        	"name"  :$('.TjYsxx .Tj_inp').eq(0).val().trim(),
+					        	"sex"	:$('.TjYsxx .Tj_inp').eq(1).val().trim(),
+					        	"ks"    :$('.TjYsxx .Tj_inp').eq(2).val().trim(),
+					        	"id"    :yyid,
+					        	"lxfs"  :$('.TjYsxx .Tj_inp').eq(4).val().trim(),
+					        	"yszw"  :$('.TjYsxx .Tj_inp').eq(5).val().trim(),
+					        	"zzbz"  :$('.TjYsxx .Tj_inp').eq(6).val().trim(),
+					        	"mail"  :$('.TjYsxx .Tj_inp').eq(7).val().trim(),
+					        	"sfzh"  :$('.TjYsxx .Tj_inp').eq(8).val().trim(),
+					        	"qq"    :$('.TjYsxx .Tj_inp').eq(9).val().trim(),	
+					        	"fwzxjz":arr_inp,
+					        	"grzl"  :$('.TjYsxx .Tj_inp').eq(11).val().trim(),
+					        	"xsdw"  :$('.TjYsxx .Tj_inp').eq(12).val().trim(),
+					        	"jdbl"  :$('.TjYsxx .Tj_inp').eq(13).val().trim(),
+					        	"jkjz"  :$('.TjYsxx .Tj_inp').eq(14).val().trim(),
+					        	"type"  :type,
+					        	"expert":"1"
+					        },
+					        //请求成功后回调函数
+					        success: function(res) {
+					        	for(var i=0;i<$('.TjYsxx .Tj_inp').length;i++){
+					        		console.log($('.TjYsxx .Tj_inp').eq(i).val().trim());
+					        	}
+					        	console.log("成功发送");
+					        	console.log(res);
+					        	$('.TjYsxx .Tj_inp').eq(3).val().trim();
+					        	$('.zhezhao').hide();
+								$('.TjYsxx').hide();
+					        },
+						});
+					}	
+				});
+	        },
+		});
+	});
+	// 添加医生信息----- 取消 Button
+	$('.TjYsxx_c_butQ').click(function(){
+		// 清空所有输入框
+		$('.TjYsxx .Tj_inp').val("");
+		//清空所有复选框
+		$('.TjYsxx input[type=checkbox]').prop('checked',false);
+		$('.CkYsxx_b input[type=checkbox]').prop('checked',false);
+		$('.TjYsxx').hide();
+		$('.zhezhao').hide();
+	});
+	
+
+/*
+
+	查看医生信息
+
+*/
+	// 查看 Button
+	var ck=function(d){
+	    var a = document.createElement('a');
+	    a.innerHTML="查看";
+	    a.href="#";
+	    a.className = "cksc";
+	    a.onclick=function(){
+			$.ajax({
+		 		//请求地址
+		        url: dz+"DoctorManage_getDoctorInfo",
+		        //请求类型
+		        type: 'post',
+		        //返回数据类型
+		        dataType:'json',
+		        //异步:true  同步:false
+		        async:true,
+		        //发送到服务器的数据。必须为 Key/Value 格式。
+		        data: {
+		        	"id":d[0]
+		        },
+		        //请求成功后回调函数
+		        success: function(res) {
+		        	var data = JSON.parse(res.msg);
+		        	console.log(data);	
+		        	var type;
+		        	if(data[17]=="1"){
+		        		type = "西医";
+		        		return;
+		        	}else{
+		        		if(data[17]=="2"){
+		        			type="中医";
+		        		}else{
+		        			type="心理咨询师";
+		        		}
+		        	}
+		            $('.CkYsxx .Ck_p0').text(data[0]);
+		            $('.CkYsxx .Ck_p1').text(data[14]);
+		            $('.CkYsxx .Ck_p2').text(data[1]);
+		            $('.CkYsxx .Ck_p3').text(data[2]);
+		            $('.CkYsxx .Ck_p4').text(data[3]);
+		            $('.CkYsxx .Ck_p5').text(data[4]);
+		            $('.CkYsxx .Ck_p6').text(data[5]);
+		            $('.CkYsxx .Ck_p7').text(data[6]);
+		            $('.CkYsxx .Ck_p8').text(data[7]);
+		            $('.CkYsxx .Ck_p9').text(data[8]);
+		            $('.CkYsxx .Ck_p10').text(type);
+		            $('.CkYsxx .Ck_p11').text(data[10]);
+		            $('.CkYsxx .Ck_p12').text(data[11]);
+		            $('.CkYsxx .Ck_p13').text(data[12]);
+		            $('.CkYsxx .Ck_p14').text(data[13]);
+		            // console.log(typeof data[9]);
+		            console.log('这个d[0]是：'+d[0]);
+		            if(data[9]==null){
+		            	$('.CkYsxx_b input[type=checkbox]').prop('checked',false);
+		            }else{
+		            	for(var i=0;i<$('.CkYsxx_b input[type=checkbox]').length;i++){
+			            	for(var f=0;f<JSON.parse(data[9]).length;f++){
+			            		if($('.CkYsxx_b input[type=checkbox]').eq(i).val()==JSON.parse(data[9])[f]){
+			            			$('.CkYsxx_b input[type=checkbox]').eq(i).prop('checked',true);
+			            		}
+			            	}
+			            }
+		            }
+
+		             // 修改-------完成 Button
+					$('.TjYsxx_c .TjYsxx_c_butT').click(function(){
+						// var p=1;
+						if($(this).text()==="完成"){
+							var arr_inp="";
+							// 必选的 input 的索引值 姓名(0)、电子邮箱(6)、身份证号(7)
+							// 首先判断必填选项不能为空
+							if ($('.TjYsxx .Tj_inp').eq(0).val().trim()==""||$('.TjYsxx .Tj_inp').eq(7).val().trim()==""||$('.TjYsxx .Tj_inp').eq(8).val().trim()=="") {
+								tishikuang("提示框","必选项不能为空！");
+								return;
+							}
+							// 判断姓名长度大于等于2且小于等于5
+							if($('.TjYsxx .Tj_inp').eq(0).val().trim().length>5||$('.TjYsxx .Tj_inp').eq(0).val().trim().length<2){
+								tishikuang("姓名提示框","姓名长度2到5个字");
+								return;
+							}
+							if($('.TjYsxx .Tj_inp').eq(1).val().trim()==""){
+								tishikuang("性别提示框","请选择性别");
+								return;
+							}
+							// 科室怎么搞----先让它小于十大于三吧··
+							if($('.TjYsxx .Tj_inp').eq(2).val().trim().length>10||$('.TjYsxx .Tj_inp').eq(2).val().trim().length<2){
+								tishikuang("科室提示框","科室长度2到10个字");
+								return;
+							}
+							// 所属医院----不为空就行了吧··
+							if($('.TjYsxx .Tj_inp').eq(3).val().trim()==""){
+								tishikuang("所属医院提示框","请填写正确的医院名称");
+								return;
+							}
+							// 联系方式-----正则···
+							// 手机：第一位必须是1，第二位必须是3578中的一个，后面跟九位，总共11位
+							// 座机：区号（前面一个0，后面跟2-3位数字），电话号码（7-8位数字），分机号（一般都是3位数字）
+							// 比如：0111-11111111-111  或者  011-1111111-111
+							if(!(/^1[3578]\d{9}$/).test($('.TjYsxx .Tj_inp').eq(4).val().trim())&&!(/^((0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$/).test($('.TjYsxx .Tj_inp').eq(4).val().trim())){
+								tishikuang("联系方式提示框","您的联系方式不正确");
+								return;
+							}
+							// 职务---最多7个字 最少2个字
+							if($('.TjYsxx .Tj_inp').eq(5).val().trim().length>7||$('.TjYsxx .Tj_inp').eq(5).val().trim().length<2){
+								tishikuang("职务提示框","字数为2到7个字");
+								return;
+							}
+							// 专治病种---最多7个字 最少2个字
+							if($('.TjYsxx .Tj_inp').eq(6).val().trim().length>7||$('.TjYsxx .Tj_inp').eq(6).val().trim().length<2){
+								tishikuang("专治病种提示框","字数为2到7个字");
+								return;
+							}
+							// 电子邮箱
+							// 验证规则：姑且把邮箱地址分成“第一部分@第二部分”这样
+							// 第一部分：由字母、数字、下划线、短线“-”、点号“.”组成，
+							// 第二部分：为一个域名，域名由字母、数字、短线“-”、域名后缀组成，
+							// 而域名后缀一般为.xxx或.xxx.xx，一区的域名后缀一般为2-4位，如cn,com,net，现在域名有的也会大于4位
+							// 比如：1@1.11 或者 1@1.111 或者 1@1.11.11 或者 1@1.111.11 或者 1@1.11.111 或者 1@1.111.111
+							if(!(/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/).test($('.TjYsxx .Tj_inp').eq(7).val().trim())){
+								tishikuang("邮箱提示框","邮箱格式不正确");
+								return;
+							}
+							// 身份证号：为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X  
+							// 比如： 111111111111111 或者 111111111111111111 或者 11111111111111111x
+							if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/).test($('.TjYsxx .Tj_inp').eq(8).val().trim())){
+								tishikuang("身份证号提示框","证件格式不正确");
+								return;
+							}
+							// Q Q
+							// 验证规则：大于等于5，小于等于10 /^[1-9]d{4,8}$/
+							if(!(/^\d{5,10}$/).test($('.TjYsxx .Tj_inp').eq(9).val().trim())){
+								tishikuang("Q Q提示框","Q Q格式不正确");
+								return;
+							}
+							// 把多选按钮的值放入 arr_inp
+							if($('.TjYsxx_b input[type=checkbox]:checked').length==0){
+								arr_inp="";
+							}else{
+								for(var i=0; i<$('.TjYsxx_b input[type=checkbox]:checked').length;i++){
+									if($('.TjYsxx_b input[type=checkbox]:checked').length==1){
+										arr_inp += "["+'["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+"]";
+									}else{
+										if(i==0){
+											arr_inp += "["+'["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+",";
+											continue;
+										}
+										if(i==$('.TjYsxx_b input[type=checkbox]:checked').length-1){
+											arr_inp += '["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+"]";
+											break;
+										}
+										arr_inp += '["'+$('.TjYsxx_b input[type=checkbox]:checked').eq(i).val().trim()+'"]'+",";
+									}
+								}
+							}
+							$.ajax({
+						 		//请求地址
+						        url: dz+"HospitalManage_getHospitalList",
+						        //请求类型
+						        type: 'post',
+						        //返回数据类型
+						        dataType:'json',
+						        //异步:true  同步:false
+						        async:true,
+						        //发送到服务器的数据。必须为 Key/Value 格式。
+						        data: {},
+						        //请求成功后回调函数
+						        success: function(res) {
+						        	var d = JSON.parse(res.msg);
+						        	console.log(d);
+						        	var yyID;
+						        	for(var e=0;e<d.length;e++){
+						        		if(d[e][1]==$('.TjYsxx .Tj_inp').eq(3).val().trim()){
+						        			yyID = d[e][0];
+						        		}
+						        	}
+						        	
+						        	var type;
+									if($('.TjYsxx .Tj_inp').eq(10).val().trim()=="西医"){
+										type = 1;
+										return;
+									}else{
+										if($('.TjYsxx .Tj_inp').eq(10).val().trim()=="中医"){
+											type = 2;
+										}else{
+											type = 3;
+										}
+									}
+						        	$.ajax({
+								 		//请求地址
+								        url: dz+"DoctorManage_updateDoctor",
+								        //请求类型
+								        type: 'post',
+								        //返回数据类型
+								        dataType:'json',
+								        //异步:true  同步:false
+								        async:true,
+								        //发送到服务器的数据。必须为 Key/Value 格式。
+								        data: {
+								        	"name"  :$('.TjYsxx .Tj_inp').eq(0).val().trim(),
+								        	"ks"    :$('.TjYsxx .Tj_inp').eq(2).val().trim(),
+								        	"id"    :data[15],
+								        	"lxfs"  :$('.TjYsxx .Tj_inp').eq(4).val().trim(),
+								        	"yszw"  :$('.TjYsxx .Tj_inp').eq(5).val().trim(),
+								        	"zzbz"  :$('.TjYsxx .Tj_inp').eq(6).val().trim(),
+								        	"mail"  :$('.TjYsxx .Tj_inp').eq(7).val().trim(),
+								        	"sfzh"  :$('.TjYsxx .Tj_inp').eq(8).val().trim(),
+								        	"qq"    :$('.TjYsxx .Tj_inp').eq(9).val().trim(),
+								        	"fwzxjz":arr_inp,
+								        	"grzl"  :$('.TjYsxx .Tj_inp').eq(11).val().trim(),
+								        	"xsdw"  :$('.TjYsxx .Tj_inp').eq(12).val().trim(),
+								        	"jdbl"  :$('.TjYsxx .Tj_inp').eq(13).val().trim(),
+								        	"jkjz"  :$('.TjYsxx .Tj_inp').eq(14).val().trim(),
+								        	"sex"	:$('.TjYsxx .Tj_inp').eq(1).val().trim(),
+								        	"hospital":yyID,
+								        	"type"  :type,
+								        	"expert":1
+								        },
+								        //请求成功后回调函数
+								        success: function(res) {
+								        	console.log("··································");
+								        	console.log("医生ID："+data[15]+"，医院ID："+yyID);
+								        	console.log("成功发送");
+								        	console.log(res.success);
+								        	$(".tishikuang").show();
+											$(".tishikuang p").text("提示框");
+											$(".tishikuang h1").text("信息修改成功！");
+											$(".tishikuang .tishikuang_but").click(function(){
+												$('.CkYsxx').hide();
+												$('.TjYsxx').hide();
+												$('.zhezhao').hide();
+												// p标签的所有内容
+												for(var i=0;i<$('.TjYsxx .Tj_inp').length;i++){	
+													$('.CkYsxx .Ck_p'+i).text($('.TjYsxx .Tj_inp').eq(i).val());
+												}
+												for(var i=0;i<$('.TjYsxx input[type=checkbox]').length;i++){
+										        	if($('.TjYsxx input[type=checkbox]').eq(i).prop('checked')==true){
+										        		$('.CkYsxx input[type=checkbox]').eq(i).prop('checked',true);
+										        	}
+										        }
+										        $(".tishikuang").hide();
+											});
+											shuju();
+								        },
+								         error:function(res){
+								        	alert("网络繁忙，请稍后。。。");
+								        }
+									});
+						        }
+						    });
+							// p=0;
+						}
+						
+					}); 
+					$('.zhezhao').show();
+					$('.CkYsxx').show();
+
+		        },
+		        //请求失败后回调函数
+		        error:function(res){
+		        	alert("网络繁忙，请稍后。。。");
+		        }
+	    	});	
+	    }
+	    return a;
+	}
+
+	// 查看-------修改 Button
+	$('.CkYsxx_c_butX').click(function(){
+		$('.CkYsxx').hide();
+		$('.TjYsxx').show();
+		$('.TjYsxx_a p').text('修改医生信息');
+		// $('.Czmm_but').show();
+		$('.TjYsxx .TjYsxx_c_butT').text('完成');
+		// 下拉搜索
+		var datalist_2 = document.getElementById("datalist_2");
+		$.ajax({
+	 		//请求地址
+	        url: dz+"HospitalManage_getHospitalList",
+	        //请求类型
+	        type: 'post',
+	        //返回数据类型
+	        dataType:'json',
+	        //异步:true  同步:false
+	        async:true,
+	        //发送到服务器的数据。必须为 Key/Value 格式。
+	        data: {},
+	        //请求成功后回调函数
+	        success: function(res) {
+	        	var d = JSON.parse(res.msg);
+	        	console.log(d);
+	        	for(var i=0; i<d.length;i++){
+	        		var opt = document.createElement("option");
+	        		opt.innerHTML=d[i][1]; 
+	        		datalist_2.appendChild(opt);
+	        	}
+	        	// p标签的所有内容
+				for(var i=0;i<$('.TjYsxx .Tj_inp').length;i++){	
+					$('.TjYsxx .Tj_inp').eq(i).val($('.CkYsxx .Ck_p'+i).text());
+				}
+				for(var i=0;i<$('.CkYsxx_b input[type=checkbox]').length;i++){
+		        	if($('.CkYsxx_b input[type=checkbox]').eq(i).prop('checked')==true){
+		        		$('.TjYsxx input[type=checkbox]').eq(i).prop('checked',true);
+		        	}
+		        }
+	        }
+	    });
+	});
+
+	 // 查看-------取消 Button
+	$('.CkYsxx_c_butQ').click(function(){
+		$('.CkYsxx_b input[type=checkbox]').prop('checked',false);
+		
+		$('.CkYsxx').hide();
+		$('.zhezhao').hide();
+
+	});
+	
+
+
+
+	// 删除 Button
+	var sc=function(d){
+	    var a = document.createElement('a');
+	    a.innerHTML="删除";
+	    a.href="#";
+	    a.className = "cksc";
+	    a.onclick=function(){
+	    	var q = $(this);
+	    	$(".tishikuang").show();
+	    	$(".tishikuang_Qxbu").show();
+			$(".tishikuang p").text("提示框");
+			$(".tishikuang h1").text("您确定要删除这条数据？");
+			$(".tishikuang .tishikuang_but").click(function(){
+				$.ajax({
+			 		//请求地址
+			        url: dz+"DoctorManage_deteleDoctor",
+			        //请求类型
+			        type: 'post',
+			        //返回数据类型
+			        dataType:'json',
+			        //异步:true  同步:false
+			        async:true,
+			        //发送到服务器的数据。必须为 Key/Value 格式。
+			        data: {
+			        	"id":d[0]
+			        },
+			        //请求成功后回调函数
+			        success: function(res) {
+			           console.log("删除成功！");
+			        },
+			        //请求失败后回调函数
+			        error:function(res){
+			        	console.log("网络繁忙，请稍后。。。");
+			        }
+			    });
+				q.parent().parent().hide();
+			    $(".tishikuang").hide();	
+			});	
+			$(".tishikuang .tishikuang_Qxbu").click(function(){
+				$(".tishikuang").hide();
+			});
+	    }
+	    return a;
+	}
+
+	 // 修改-------重置密码 Button
+	var mm = function(d){
+		// var a=1;
+		var a = document.createElement('a');
+	    a.innerHTML="重置密码";
+	    a.href="#";
+	    a.className = "cksc";
+	    a.onclick=function(){
+    		$.ajax({
+		 		//请求地址
+		        url: dz+"DoctorManage_resetDoctorPassword",
+		        //请求类型
+		        type: 'post',
+		        //返回数据类型
+		        dataType:'json',
+		        //异步:true  同步:false
+		        async:true,
+		        //发送到服务器的数据。必须为 Key/Value 格式。
+		        data: {
+		        	'id':d[0]
+		        },
+		        //请求成功后回调函数
+		        success: function(res) {
+		        	console.log(res.success);
+		        	tishikuang("修改密码","已成功修改密码！");
+		        }
+		    });
+	    }
+		
+		return a;
+	}
+
+
+
+/*
+
+	搜索医生信息
+
+*/ 
+	
+	// 请求列表数据
+	// var search = document.getElementById('search');
+	// search.onclick=function(){
+	// 	shuju();
+	// }
+
+	
+
+
+/*
+	提示框
+*/
+	function tishikuang(a,b){
+		$(".tishikuang").show();
+		$(".tishikuang p").text(a);
+		$(".tishikuang h1").text(b);
+		$(".tishikuang .tishikuang_but").click(function(){
+			$(".tishikuang").hide();
+		});
+	}
+
+</script>

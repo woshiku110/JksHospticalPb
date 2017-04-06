@@ -1,0 +1,75 @@
+
+@horizon : 24px; //头部文字到顶边的距离
+@logoWidth : 178px;
+@headerHeight : 70px; //头部高度
+
+#logo{
+	width : @logoWidth;
+	height : @headerHeight;
+	background : url('../image/LOGO.png');
+}
+
+#logoRight{
+	height : @headerHeight;
+	width : calc(~'100% - '@logoWidth);
+	position : absolute;
+	left : @logoWidth;
+	top : 0px;
+}
+
+#title{
+	display : inline-block;
+	font-size : 20px;
+	margin-top : 18px;
+	margin-left : 20px;
+	color : #fff;
+}
+
+#rightCell{
+	position : absolute;
+	right : 42px;
+	top : 0px;
+	height : @headerHeight;
+	width : auto;
+}
+
+#huanying{
+	display : inline-block;
+	margin-top : @horizon;
+	margin-right : 12px;
+	font-size : 14px;
+//	font-weight : 300;
+}
+#xingming{
+	display : inline-block;
+	margin-top : @horizon;
+	margin-right : 12px;
+	font-size : 14px;
+	font-weight : 600;
+}
+
+#logout{
+	display : inline-block;
+	margin-top : @horizon;
+	font-size : 14px;
+}
+#logout:hover{
+	cursor : pointer;
+}
+#logoutText{
+	display : block;
+	float : left;
+	margin-left : 24px;
+}
+#logoutIcon{
+	display : block;
+	float : left;
+	margin-top : 0px;
+	margin-right : 5px;
+	width : 19px;
+	height : 17px;
+	font-size : 17px;
+	background : url('../image/icon_exit.png');
+}
+
+

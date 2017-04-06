@@ -1,0 +1,144 @@
+*{
+	margin:0;padding: 0;
+	font-family: Microsoft YaHei;
+	background-repeat: no-repeat;
+	text-decoration: none;
+}
+ul{list-style:none;}
+
+#asideLeft{
+	float:left;
+	width:415px;
+	margin-top: 50px;
+	padding:0 5%;
+}
+
+#asideLeft li{width: 420px;}
+
+.underline{
+	border-bottom: 1px solid #2872B7;
+	padding-bottom: 10px;
+	}
+
+.underspan{
+	border-bottom:3px solid #2872B7;
+	padding-bottom:7px;
+}
+
+#asideLeft li button:first-child{margin:0;}
+
+.ico_download{background:url('../ico/ico_download.png') 4px 6px no-repeat;}
+
+#asideLeft li button{
+	width: 99px;
+	height: 34px;
+	margin-left: 40px;
+	background-color: #2872B7;
+	border-style: none;
+	border-radius: 5px;
+	color: white;
+}
+
+
+/*.ico_no{background:url('../ico/ico_no.png') 4px 6px no-repeat}
+.ico_stop{background:url('../ico/ico_stop.png') 4px 6px no-repeat}*/
+
+
+#asideLeft li{color: #2872B7;}
+#asideLeft li img{
+	border: none;
+	position: absolute;
+	width: 100%;
+	min-height: 300px;
+	left: 50%;
+	top: 50%;
+	cursor: pointer;
+}
+/*@media screen and (max-height:750px){
+  #asideLeft li img{width: 100%;height:246px;border:1px solid black;}
+}*/
+#asideLeft li #bigbtn{
+	width: 240px;
+	margin: 0 57px;
+	background: #2872B7;
+	border-radius: 5px;
+	height: 34px;
+	padding: 0 20px;
+}
+
+#asideLeft li #bigbtn div{
+	float: left;
+	margin: 5px;
+	width: 22px;
+	height: 22px;
+}
+
+/*这是图片的操作框*/
+.ico_left{background:url('../ico/ico_left.png');cursor: pointer;}
+.ico_left_re{background:url('../ico/ico_left_re.png');cursor: pointer;}
+.ico_sclare_large{background:url('../ico/ico_sclare_large.png');cursor: pointer;}
+.picture_num{width:38px;text-align:center;color:white;}
+.ico_sclare_small{background:url('../ico/ico_sclare_small.png');cursor: pointer;}
+.ico_right_re{background:url('../ico/ico_right_re.png');cursor: pointer;}
+.ico_right{background:url('../ico/ico_right.png');cursor: pointer;}
+
+
+
+
+#asideRight{
+	float: left;
+	width: 400px
+	;margin-top: 50px;
+	padding: 0 2%
+}
+#asideRight li{color: #2872B7;font-weight: bold;}
+#asideRight li.black14{font-size: 14px;color: black;}
+#asideRight li.black14 span#num{font-weight: 100;font-size: 14px;}
+#asideRight li.black14 select,option{font-size: 14px;}
+#count{width: 55px;}
+#asideRight #name {
+	height: 22px;
+	padding-left: 5px;
+	font-size: 14px;
+	border-radius: 5px;
+	border:1px solid #ccc;
+}
+#asideRight li button{
+	width: 72px;
+	height: 30px;
+	background: #2872B7;
+	border-style: none;
+	border-radius: 5px;
+	color:white;
+	font-family:Microsoft YaHei;
+}
+
+#asideRight li.black12{font-size: 12px;color: black;}
+#asideRight li.black12 span#num2{color:#2872B7;font-size: 12px;}
+
+.bluestr{
+	float: left;
+	margin-top: -3px;
+	width: 20%;
+	height: 3px;
+	background:#2872B7;
+}
+
+.thead{
+	background: #C8DEFC;
+}
+
+td{
+	height: 45px;
+	font-size: 14px;
+	text-align: center;
+}
+
+#asideRight li table tr td{font-size: 14px;}
+
+table tr:nth-child(even){background:#F6FBFF;}
+#asideRight li button.del{
+	display: inline-block;
+	width: 50px;
+	line-height: 20px;
+}

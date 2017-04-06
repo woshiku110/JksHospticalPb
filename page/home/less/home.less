@@ -1,0 +1,40 @@
+
+@headHeight:70px; //顶部横幅高度
+@leftWidth:200px; //左边菜单栏的宽度
+@rightMinWidth:700px; //右侧内容显示的最小宽度
+@creviceWidth:10px; //菜单隐藏后的最小宽度
+
+// 顶部
+#header{
+	width: 100%;
+	height: @headHeight;
+	background-color: #2872B7;
+	color: #ffffff;
+	z-index: 999;
+	position: fixed;
+	top: 0px; 
+	left: 0px;
+}
+
+// 侧边栏
+#left_container{
+	position: fixed;
+	top: @headHeight;
+	left: 0px;
+	width: @leftWidth + @creviceWidth;
+	height: ~'calc(100% - ' @headHeight ~')';
+	overflow: hidden;
+	background-color: #FFF;
+	z-index:1;
+}
+
+// 内容
+#content{
+	position: fixed;
+	top: @headHeight;
+	left: @leftWidth + @creviceWidth;
+	height: ~'calc(100% - '@headHeight ~')';
+	width: ~'calc(100% - '@leftWidth ~')';
+	min-width: @rightMinWidth;
+	overflow: auto;
+}

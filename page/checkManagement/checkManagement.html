@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="checkManagement.css">
+
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="../../common/dropDownInput/dropDownInput.js"></script>
+    <script type="text/javascript" src="js/checkManagement.js"></script>
+    <script type="text/javascript" src="js/parseCheckManagement.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+    <style>
+        .inputDropDown{
+            border: 1px solid #666;
+            border-top: 0px solid #666;
+            overflow:auto;
+            padding: 0;
+            margin: 0;
+            white-space: nowrap;
+            background-color:#fff;
+            cursor: pointer;
+        }
+        .dropDownItem{
+            background: #fff;
+        }
+        .dropDownItemHover{
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="button" id="firstBtn" icon="page/checkManagement/img/ico_add.png" onclick="upDown()">添加检查项</a>
+        <div class="head" id="head" >
+            <div  class="add_check">
+                <div class="add_check_head">
+                    <a>添加检查项目</a>
+                </div>
+                <div class="add_check_middle">
+                    <div>
+                        <a>所属医院</a><input id="ssyy" style="margin-right: 152px" type="text">
+                        <a>项目编号</a><input type="text">
+                    </div>
+                    <div style="margin-top: 26px;">
+                       <a>项目名称</a><input style="margin-right: 152px" type="text">
+                       <a>项目价格</a><input type="text">
+                    </div>
+                </div>
+                <div class="add_check_middle_right">
+                    <a>*注意事项</a>
+                    <textarea id="jcxz"></textarea>
+                </div>
+                <div class="add_check_bottom">
+                    <a class="button" style="margin-right: 30px;"onclick="addCheck()">添加</a>
+                    <a class="button" onclick="cancel()">取消</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content_head">
+                <a>检查项列表</a>
+            </div>
+            <div class="content_select">
+                <div style="margin: 18px 30px 10px 0;">
+                    <a class="hospital">检查医院</a>
+                    <input  id="hospital_head" style="height: 28px;width: 442px;border: 1px solid #BBBBBB;padding-left: 5px;" type="text" placeholder="==请选择医院名称==" onfocus="getHospitalList();" >
+                </div>
+            </div>
+            <div id="content_table"></div>
+        </div>
+    </div>
+</body>
+</html>

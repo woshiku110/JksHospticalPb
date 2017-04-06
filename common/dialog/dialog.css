@@ -1,0 +1,43 @@
+
+.dialog_mask{
+	/*background-color: #000;
+	opacity: 0.3;*/
+}
+
+.dialog{
+	border: 1px solid #2872B7;
+	border-radius: 0px;
+	background-color: #2872B7;
+}
+.dialog_title{
+	margin-left: 6px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.dialog_colseButton{
+	border-radius: 0px;
+	color: #FFF;
+	/*background-color: #CB8A74;*/
+	-moz-user-select:none;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	-khtml-user-select:none;
+	user-select:none;
+}
+.dialog_colseButton:hover{background-color: #C44F1C;}
+
+.dialog_container{
+	background-color: #FFF;
+	border: 1px solid #95B8E7;
+	overflow: auto;
+}
+
+
+
+
+
+
+
+
+

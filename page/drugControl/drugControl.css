@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+*{  margin: 0;  padding: 0;  }
+.container{
+    width: 1000px;
+    height: 1000px;
+}
+.head{
+    overflow:hidden;
+}
+.head .add_regions{
+    width: 100%;
+    margin-top: 12px;
+}
+.add_drug_head{
+    width: 100%;
+    border-bottom: 1px solid #2872b7;
+}
+.add_drug_head a{
+    display: inline-block;
+    height: 42px;
+    border-bottom: 3px solid #2872b7;
+    color: #2872b7;
+    font-size: 18px;
+    line-height: 46px;
+}
+.add_drug_middle{
+    width: 100%;
+    margin: 18px 0;
+}
+.td_title{
+	width:70px;
+}
+.col{
+	width:180px;
+}
+.col select{
+	width:130px;
+	height:24px;
+}
+.col input{
+	width:130px;
+	height:24px;
+	border:1px solid #CCCCCC;
+	border-radius:5px; 
+}
+.content{
+    height: 500px;
+}
+.content_head{
+    width: 100%;
+    font-size: 18px;
+    color: #2872b7;
+}
+.content_middle{
+	height:50px;
+	line-height:50px;
+    width: 100%;
+    font-size: 16px;
+    border-top:1px solid #2872b7 ;
+    border-bottom:2px solid #2872b7 ;
+}
+.content_middle input{
+	height:22px;
+    width: 310px;
+    border:1px solid #CCCCCC;
+	border-radius:5px; 
+}
+.content_head a{
+    height: 46px;
+    display: inline-block;
+    border-bottom:3px solid #2872b7 ;
+    line-height: 46px;
+}
+.content_select{
+    width: 100%;
+}
+#content_table{
+    width: 100%;
+    background: blue;
+}
+.summit_button{
+    display: inline-block;
+    background: #3268AF;
+    width: 70px;
+    height: 28px;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    margin-top:20px;
+}

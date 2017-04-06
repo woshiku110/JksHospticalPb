@@ -1,0 +1,59 @@
+*{margin: 0;padding: 0;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal;  }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px"Microsoft YaHei", 微软雅黑; }
+html {overflow-y: scroll;}
+
+body {
+    margin: 38px 0 0 14px;
+    background:#f3f3f3;
+    color:#333;
+    font-size:14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+}
+/*所有input样式*/
+.defaultInputStyle{
+    height:28px;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    color: #333;
+    line-height: 28px;
+}
+/*滚动条*/
+::-webkit-scrollbar {
+    width:8px;
+}
+::-webkit-scrollbar-track     {
+    background:white;
+}
+::-webkit-scrollbar-thumb{
+    background:#c8defc;
+    border-radius:4px;
+}
+/*横线样式*/
+.line{
+    width: 1000px;
+    border-bottom: 1px solid #2872B7;
+}
+/*标题样式*/
+.title{
+    display: inline-block;
+    height: 22px;
+    border-bottom: 3px solid #2872B7;
+    font-size: 14px;
+    line-height: 22px;
+    color: #2872B7;
+}
+input{
+    height: 20px;
+}
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="countManagement.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+
+    <script type="text/javascript" src="js/countManagement.js"></script>
+    <script type="text/javascript" src="js/parseCountManagement.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+</head>
+<body>
+<div id="dk"style="background: #BBB;display:none;opacity: 0.3;position: fixed;left: 0px;top: 0px;width:100%;height: 100%;z-index: 100"></div>
+<!--充值金额-->
+<div class="pay">
+    <a class="pay_head">充值金额</a>
+    <div class="specificMessage">
+        <a>充值账号:</a><a style="padding-left: 10px">232</a><br><br>
+        <a>用户姓名:</a><a style="padding-left: 10px">王梁安</a><br><br>
+        <a>充值金额:</a><input /><br><br>
+        <a>再次确认:</a><input/><br><br>
+    </div>
+    <div class="bbt">
+        <a class="button" style="margin-right: 20px" onclick="btn(3)">确定</a>
+        <a class="button" style="background: #FFFFFF;color:#2872b7;border: 1px solid #2872b7" onclick="btn(3)">取消</a>
+    </div>
+</div>
+<!--账户详情-->
+<div class="countMessage">
+    <a class="countMessage_head">账户详情</a>
+    <div class="countMessage_middle">
+        <div class="countMessage_middle_content">
+            <a>注册手机 :</a>&nbsp;&nbsp;<a>12545225124</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>用户姓名 :</a>&nbsp;&nbsp;<a>周小曼</a>
+            <div id="countMessageList"></div>
+            <div class="foot" style="border-bottom: 1px solid #BBBBBB;float: left;width: 99%;">
+                <a>本页共</a><a></a><a>个</a>
+                <a style="margin-left: 20px">总共</a><a></a><a>个</a>
+                <a class="left" style="margin-left: 200px"><</a>
+                <a class="left">1</a>
+                <a class="left">></a>
+                <a>共</a><a></a><a>页</a>
+                <a style="margin-left: 10px">到第</a>
+                <input />
+                <a>页</a>
+                <a class="ok">确定</a>
+            </div>
+        </div>
+        <div style="text-align: center;">
+           &nbsp;
+            <a class="button"style="margin-top: 20px;" onclick=" btn(3)">关闭</a>
+        </div>
+    </div>
+
+</div>
+<!--主框架-->
+<div class="container">
+    <div class="head">
+        <span>账户搜索</span>
+    </div>
+    <div class="middle">
+        <a>注册手机\用户姓名</a>
+        <input />
+        <a class="button">搜索</a>
+        <span>账户列表</span>
+    </div>
+    <div id="countList"></div>
+    <div class="foot">
+        <a>本页共</a><a>1</a><a>个</a>
+        <a style="margin-left: 20px">总共</a><a>1</a><a>个</a>
+        <a class="left" style="margin-left: 200px"><</a>
+        <a class="left">1</a>
+        <a class="left">></a>
+        <a>共</a><a></a><a>页</a>
+        <a style="margin-left: 10px">到第</a>
+        <input />
+        <a>页</a>
+        <a class="ok">确定</a>
+    </div>
+</div>
+</body>

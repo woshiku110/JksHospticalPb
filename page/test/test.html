@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		
+		<title>金康晟医患对接平台</title>
+		<script type="text/javascript" src="../../common/js/util.js"></script>
+		<script type="text/javascript" src="../../common/js/json2.js"></script>
+
+		<link rel="stylesheet" href="../../common/button/button.css"/>
+		<script type="text/javascript" src="../../common/button/button.js"></script>
+
+    </head>
+	<body>
+	<div id="bring"></div>
+	<div id="ok"></div>
+		<br/>
+		<center>
+			<h1>测试</h1>
+			你可以在这 page/test/test.html 个页面做一些开发测试
+		</center>
+		<br/><br/>
+		<script type="text/javascript">
+			document.write("_webRoot："+_webRoot +"<br/>");
+			document.write("_serverHome："+_serverHome +"<br/>");
+			document.write("_token："+_token +"<br/>");
+			document.write("_loginer："+ JSON.toJson(_loginer) +"<br/>");
+			document.write("页面宽度： "+ getWindowSize().x +"，页面高度："+getWindowSize().y+"<br/>");
+			var str1 = '{ "name": "cxh", "sex": "man" }';
+			console.log(str1);
+			var oo = JSON.parse(str1);
+			console.log(oo);
+		</script>
+	</body>
+</html>
+
+<script>
+
+	var btn = new Button('bring','震哥哥','page/test/img/ico_bill.png');
+	btn.setIcon('page/test/img/ico_stop.png');
+	var btn1 = new Button('ok','震哥哥2');
+	btn1.setIcon('page/test/img/ico_bill.png');
+
+
+</script>
+

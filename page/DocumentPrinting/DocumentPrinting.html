@@ -1,0 +1,71 @@
+<html>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="DocumentPrinting.css">
+
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="../../common/dialog/dialog.js"></script>
+    <script type="text/javascript" src="js/DocumentPrinting.js"></script>
+    <script type="text/javascript" src="js/parseDocumentPrinting.js"></script>
+    <script>
+        window.onload = function() {
+            telephone()
+            var rowNum = parseInt((getWindowSize().y - 360) / 42);
+            var t = new Table("tableContent", 0, 4);
+            document.getElementById("tableContent").tableObject = t;
+            t.setColWidth(["1%", "30%", "60%", "10%"]);
+            t.setHead(["", "序号", "检查项目", "价格",]);
+            t.setTemplate(["", "[0]", "[1]", "¥"+"[2]"]);
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <!--头-->
+    <div class="head">
+        <a>单据打印</a>
+    </div>
+    <div class="second">
+        <div class="second-left" >
+            <a>单据编号</a>
+            <input type="text" value="1701030001"/>
+          <!--  <a>患者姓名</a>
+            <input type="text"/>-->
+        </div>
+        <div class="second-right">
+            <a id="search" class="button" onclick = "selectMessage()">搜索</a>
+            <a id="printing" class="button">打印单据</a>
+        </div>
+    </div>
+    <div id="tableTitle" style = "display: none">
+        <div class="tableTitle">
+            <div class="orderNumber">
+                <a>订单编号</a>
+                <span></span>
+            </div>
+            <div class="orderNumber">
+                <a>患者姓名</a>
+                <span></span>
+            </div>
+            <div class="orderNumber">
+                <a>患者性别</a>
+                <span></span>
+            </div>
+            <div class="orderNumber">
+                <a>联系方式</a>
+                <span></span>
+            </div>
+        </div>
+        <div id="tableContent"></div>
+        <div id="sum">
+            <a>合计</a>
+            <span></span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

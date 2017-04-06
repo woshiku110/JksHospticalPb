@@ -1,0 +1,67 @@
+
+.menu{
+	position:absolute;
+	top:0px;
+	left:0px;
+	border-top : 40px solid transparent;
+	overflow: visible;
+	width: 200px;
+	height: auto;
+}
+
+.menuCell{
+	width:200px;
+	height:34px;
+	margin-bottom: 1px;
+	overflow: visible;
+	cursor: pointer;
+}
+.cellBody{
+	width:200px;
+	height:34px;
+	display: block;
+}
+.menuIcon{
+	display: block;
+	float: left;
+	width: 18px;
+	height: 18px;
+	background-image: url('../image/yhfz0.png');
+	background-repeat:no-repeat;
+    background-position:100% 100%;
+    margin-left: 40px;
+    margin-top: 9px;
+}
+.menuText{
+	display: block;
+	float: left;
+	margin-left: 12px;
+	font-size: 18px;
+	color: #BBB;
+	line-height: 34px;
+}
+.menuRemind{
+	display: none;
+	float: left;
+	margin-top: 7px;
+	margin-left: 6px;
+	color: red;
+}
+
+.selected{
+	display: block;
+	width:210px;
+	height:34px;
+	background-color: #2872B7;
+}
+.triangle{
+	width:0px;
+	height:0px;
+	margin-left:200px;
+	border-top: 3px;
+	border-bottom:3px;
+	border-left:5px;
+	border-right:5px;
+	border-style: solid;
+	border-color: #1B5790 transparent transparent #1B5790;
+}

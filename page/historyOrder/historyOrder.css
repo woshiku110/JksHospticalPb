@@ -1,0 +1,117 @@
+*{margin: 0;padding: 0;}
+.container{
+    width: 100%;
+    background: #FBFBFB;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    float: left;
+}
+#head a{
+    display: block;
+    float: left;
+    width: 49%;
+    height: 40px;
+    border-bottom: 1px solid #e2e2e2;
+    font-size :20px;
+    color: #8e8e8e;
+    background: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+#head p{
+    display: block;
+    float: left;
+    width: 1px;
+    height: 24px;
+    background: #BBBBBB;
+    margin: 10px 3px 0 3px;
+}
+.border{
+    border-bottom: 1px solid #e2e2e2;
+}
+.border span{
+    float: right;
+    color: orange;
+    margin: -28px 10px 0 0;
+}
+.base{
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+    margin-top: 20px;
+    border-top:1px solid #e2e2e2;
+    background: #FFFFFF;
+    float: left;
+}
+.h1{
+    font-size: 16px;
+    margin-left: 22px;
+    line-height: 34px;
+    color:#666666;
+    display: block;
+    width: 74%;
+}
+.tab{
+    width: 6px;
+    height: 22px;
+    background:#2872b7 ;
+    float: left;
+    clear: both;
+    margin:6px 0 0 10px;
+}
+.appointment{
+    color: #8e8e8e;
+    font-size: 14px;
+}
+.message{
+    width: 100%;
+    float: left;
+    padding: 10px 16px 10px 10px;
+    line-height: 28px;
+    background: #FBFBFB;
+}
+.message a{
+    display: block;
+    float: left;
+    margin-left: 10px;
+
+}
+.message span{
+    float: left;
+}
+.message .picture{
+    width: 90px;
+    height: 90px;
+    float: left;
+}
+.message .icon{
+    float: right;
+    margin: -18px 20px 0 0;
+}
+.appointment .time{
+    float: left;
+    padding: 10px 0;
+    width:99%
+}
+.appointment .time .visit_time{
+    margin-left: 10px;
+}
+.appointment .time .delete_order{
+    display: inline-block;
+    width: 66px;
+    text-align: center;
+    line-height: 21px;
+    border: 1px solid #8e8e8e;
+    float: right;
+}
+.appointment .time .assess{
+    display: block;
+    float: right;
+    width: 66px;
+    height: 21px;
+    border: 1px solid orange;
+    color: orange;
+    text-align: center;
+    line-height: 21px;
+    margin-right: 10px;
+}

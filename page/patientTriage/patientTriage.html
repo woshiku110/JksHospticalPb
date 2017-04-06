@@ -1,0 +1,158 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../../common/scroll_bar/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="patientTriage.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="js/patientTriage.js"></script>
+    <script type="text/javascript" src="js/parsePatientTriage.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <a class="button" style="margin-right: 50px" id="bringOrder" icon="page/patientTriage/img/ico_bill.png" onclick="bringOrder()">取出订单</a>
+            <a class="button" style="margin-right: 50px" id="noOrder" icon="page/patientTriage/img/ico_no.png" disabled ="disabled" onclick="noOrder()">无法分诊</a>
+        </div>
+        <div class="content">
+            <div class="content_left">
+                <div class="content_left_head">
+                    <div class="content_left_head_word">
+                        <a>患者详情</a>
+                    </div>
+                </div>
+                <div class="content_left_content">
+                    <div class="content_left_content_message">
+                        <div class="content_left_content_message_1">
+                            <a >基础信息</a>
+                            <hr>
+                        </div>
+                        <div class="content_left_content_message_2">
+                            <div class="content_left_content_message_2_m">
+                                <a>姓名：</a>
+                                <span id="p_name"></span>
+                            </div>
+                            <div class="content_left_content_message_2_m">
+                                <a>性别：</a>
+                                <span id="sex"></span>
+                            </div>
+                            <div class="content_left_content_message_2_m">
+                                <a>年龄：</a>
+                                <span id="age"></span>
+                            </div>
+                            <div class="content_left_content_message_2_m">
+                                <a>病史：</a>
+                                <span id="history"></span>
+                            </div>
+                            <div class="content_left_content_message_2_m">
+                                <a>部位：</a>
+                                <span id="body"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content_left_content_symptom">
+                        <div class="content_left_content_message_1">
+                            <a>症状描述</a>
+                            <hr>
+                        </div>
+                        <div class="content_left_content_message_2">
+                           <p id ="content" style="line-height: 20px;margin-left: 15px"></p>
+                        </div>
+                    </div>
+                    <div class="content_left_content_picture">
+                        <div class="content_left_content_message_1">
+                            <a>自拍图片</a>
+                            <hr>
+                        </div>
+                        <div class="picture_limit">
+                          <!--  <a>图片仅医生可见</a>-->
+                        </div>
+                        <div class="content_left_content_picture_img" >
+                         <!--   <div class="content_left_content_picture_img_picture">
+                          &lt;!&ndash;  <img src="http://192.168.0.108:8080/File/filebed/test.jpg">&ndash;&gt;
+                        </div>-->
+                           <!-- <div class="content_left_content_picture_img_picture">
+                               &lt;!&ndash; <img src="img/doctor.jpg">&ndash;&gt;
+                            </div>-->
+                            <!--<div class="content_left_content_picture_img_picture">
+                                <img src="img/doctor.jpg">
+                            </div>
+                            <div class="content_left_content_picture_img_picture">
+                                <img src="img/doctor.jpg">
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="content_left_content_question">
+                        <div class="content_left_content_message_1">
+                            <a>相关问题</a>
+                            <hr>
+                        </div>
+                        <div class="content_left_content_question_1">
+                        <!--    <a>1.最近是否牙龈上火</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="content_left_content" style="background:url(img/girl.png)center no-repeat ;display: block;"></div>
+            </div>
+            <div class="content_right">
+                <div class="content_left_head">
+                    <div class="content_left_head_word">
+                        <a>医生分配</a>
+                    </div>
+                </div>
+                <div class="content_right_content">
+                    <div class="content_right_content_head">
+                        <div class="content_right_content_head_1">
+                           <div class="content_right_content_head_1_1">
+                               <a >医生姓名:</a><input id="input_1"type="text">
+                           </div>
+                           <div class="content_right_content_head_1_1">
+                               <a>所在科室：</a>
+                              <div class="select">
+                                  <div class="autoComplete">
+                                      <input value="牙科" id="department" />
+                                      <ul>
+                                          <li></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="content_right_content_head_2">
+                            <div class="content_right_content_head_2_1"><a>预诊病诊:</a><input id="ill" type="text"></div>
+                            <div class="content_right_content_head_2_1"><a class="button" id="search" style=" font-size: 14px;" onclick=" doctorAssign()">搜索</a></div>
+                            <div class="content_right_content_head_2_1"><a class="button" id="replace" style="margin-left: 45px;  font-size: 14px;" onclick="reset()">重置</a></div>
+                        </div>
+                    </div>
+
+                    <div class="content_right_content_message">
+                       <!-- <div class="content_right_content_message_1_head">
+                            <a id="time">今天是2016年11月8日</a>
+                        </div>
+                        <div class="content_right_content_message_1">
+                            <div class="content_right_content_message_img">
+                            </div>
+                            <div class="content_right_content_message_name">
+                               <a class="content_right_content_message_name_1">张家豪</a>
+                                <p>世界著名脑科医生</p>
+                            </div>
+                            <div class="content_right_content_message_work">
+                                <p>不少地方谁技术的的积分制度</p>
+                            </div>
+                            <div class="content_right_content_message_btn">
+                                <a class="private">分配</a>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

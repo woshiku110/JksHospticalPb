@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="css/articleManagement.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mousewheel-3.0.6.min.js"></script>
+    <script type="text/javascript" src="../../common/scroll_bar/js/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+
+    <script type="text/javascript" src="js/articleManagement.js"></script>
+    <script type="text/javascript" src="js/parseArticleManagement.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+    <script>
+
+        /*(function($){
+            $(window).load(function(){
+                $(".editor").mCustomScrollbar();
+            });
+        })(jQuery);*/
+    </script>
+</head>
+<body>
+<div id="dk"style="background: #BBB;display:none;opacity: 0.3;position: fixed;left: 0px;top: 0px;width:100%;height: 100%;z-index: 100"></div>
+<div class="editor">
+    <a class="editor_head">编辑文章</a>
+    <div class="editor_content">
+        <div class="editor_content_content">
+            <div class="editor_content_content_head">
+                <a  style="margin-left: 6%">文章标题:</a>
+                <input id="title" style="width: 224px;"/>
+                <a style="color: red">*必填</a>
+                <a style="margin-left: 60px">作者:</a>
+                <input id="author" style="width: 100px;"/>
+                <div id="oo" style="float: right;margin-right: 90px">
+                    <a style="margin-left: 100px">栏目分类</a>
+                    <select id='sid' style="width: 100px;"></select>
+                </div>
+
+            </div>
+            <div class="editor_scroll">
+                <div class="editor_content_content_up">
+                    <iframe id ="message" src="kindeditor-4.1.7/examples/simple.html"></iframe>
+                </div>
+                <div class="editor_content_content_middle">
+                    <a>封面:</a>
+                    <form id="uploadForm">
+                        <input type="file" name="upload" id="picture">
+                        <a class="button" style="background: none;color: #2872b7;border: 1px solid #2872b7;font-size: 14px;margin-left: 38px">添加图片</a><br><br>
+                        <div id="pictureB"></div>
+                    </form>
+                    <br>
+                    <a>附件:</a>
+                    <form id="fileSave">
+                        <input type="file" id="file" name="upload" onchange="getFile(file)">
+                        <a  class="button" style="background: none;color: #2872b7;border: 1px solid #2872b7;font-size: 14px;margin-left: 4px">添加附件</a>
+                        <input id="hint" type="text"/>
+                    </form>
+
+                    <a >摘要</a>
+                    <a style="color:#BBBBBB">选填，如果如果不填写会默认抓取正文前54个字</a>
+                    <div style="width:100%;height: 40px;overflow: hidden;">
+                        <textarea id="abstract" style="width:100%;height:30px;"></textarea>
+                    </div>
+                </div>
+                <div class="editor_content_content_down">
+                    <a id="save" class="button" onclick="Article(1)">保存</a>
+                    <a class="button" style="background: none;color: #2872b7;border: 1px solid #2872b7;margin-left: 10px" onclick="Article(2)">取消</a>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="head">
+        <a class="button" id="addArticle" icon="page/articleManagement/img/ico_add.png" onclick="addArticle()">添加文章</a>
+        <span id="head">管理文章</span>
+    </div>
+    <div class="content">
+        <div class="up">
+            <a>文章标题搜索</a>
+            <input type="text" id="titleHead">
+          <!--  <a style="margin-left: 100px">分类</a>
+            <select>
+                <option>水果</option>
+                <option>蔬菜</option>
+                <option>糖</option>
+            </select>-->
+            <a class="button" style="margin-left: 100px;height:30px;line-height: 30px;margin-top: 6px;font-size: 16px;">搜索</a>
+        </div>
+        <div id="middle" style="overflow: hidden;"></div>
+       <!-- <div class="bottom">
+            <a style="line-height: 42px;">本页共:</a><span></span><a>页</a>
+            <a style="line-height: 42px;">总共:</a><span></span><a>页</a>
+        </div>-->
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0"/>
+
+    <title>余额收支明细</title>
+    <title>我的钱包</title>
+    <link rel="stylesheet" href="css/balanceDetail.css" />
+</head>
+<body style="overflow-x: hidden">
+    <div class="monetary" onclick="enterDetailPage(true)">
+        <a>挂号消费</a>
+        <p>2016-12-13  12:06:59</p>
+        <span style="color:greenyellow">-100.00</span>
+    </div>
+    <div class="monetary" onclick="enterDetailPage(false)">
+        <a>消费充值</a>
+        <p>2016-12-13  12:06:59</p>
+        <span style="color: red">+100.00</span>
+    </div>
+    <div class="foot">
+        <a>本服务由金康晟提供</a>
+    </div>
+</body>
+<script>
+    function enterDetailPage(isPay){
+        if(isPay){
+            window.location.href = "countM.html";
+        }else{
+            window.location.href = "countM_add.html";
+        }
+    }
+</script>
+</html>

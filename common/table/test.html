@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<link href="paginBar.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="table.js"></script>
+	</head>
+	<body>
+		<div style="margin:86px;">
+			<input type="button" value="push" onclick="push()"/>
+			<input type="button" value="clean" onclick="clean()"/>
+			<input type="button" value="add" onclick="add()"/><br/>
+			<input id="rtext" type="text"/>
+			<input type="button" value="replace" onclick="replace()"/>
+			<input type="button" value="delete" onclick="removeRow()"/>
+			<div id="gjt_table">
+			</div>
+		</div>
+		<br/>
+		<script type="text/javascript">
+			var t = new Table("gjt_table",8,5);
+			t.setColWidth(["2%","20%","38%","20%","20%"]); 
+			t.setHead(["","你还","非法拘禁","烦烦烦","啥事"]);
+			
+			var t3 = function(data){
+				return "<a>"+data[2]+data[2]+"</a>";
+			};
+			var template = ["","[0]","[1]和[2]",t3,"[4]sda"];
+			t.setTemplate(template);
+			
+			var a = 0;
+			var p = 0;
+			var r = 0;
+			function add(){
+				a++;
+				var data = ["a"+a,2,3,4,5];
+				var ra = t.add(data,true);
+				ra.id="a"+a;
+			}
+			function push(){
+				p++;
+				var data = ["p"+p,2,3,4,5];
+				var ra = t.push(data);
+				ra.id="p"+p;
+			}
+			function clean(){
+				t.clean();
+			}
+			function replace(){
+				r++;
+				var data = ["r"+r,2,3,4,5];
+				var rt = document.getElementById("rtext").value;
+				var ra = t.replace(data, rt);
+				ra.id = "r"+r;
+			}
+			function removeRow(){
+				var rt = document.getElementById("rtext").value;
+				var ra = t.remove(rt);
+			}
+		</script>
+	</body>
+</html>

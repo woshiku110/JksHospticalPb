@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="columnManagement.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+
+    <script type="text/javascript" src="js/columnManagement.js"></script>
+    <script type="text/javascript" src="js/parseColumnManagement.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+</head>
+<body>
+<div id="dk"style="background: #BBB;display:none;opacity: 0.3;position: fixed;left: 0px;top: 0px;width:100%;height: 100%;z-index: 100"></div>
+<div class="column_editor">
+    <a class="column_editor_head">栏目编辑</a>
+    <div class="selectPoint">
+        <a>一级栏目:</a>
+        <select id="sid" onchange="selectA()">
+            <option value="全部" selected = 'selected' >全部</option>
+            <option value="2">自查</option>
+            <option value="3">更多</option>
+            <option value="4">帮助</option>
+        </select><br><br>
+        <a>栏目名称:</a>
+        <input id="title"/>
+    </div>
+    <div class="column_picture">
+        <a style="margin-left: 30px;">栏目封面:</a>
+        <form id="uploadForm">
+            <input type="file" id="picture" name="upload"/>
+            <a class="button" style="background: none;color: #2872b7;border: 1px solid #2872b7;margin:-10px 0 0 102px">添加图片</a>
+            <div class="picture" id="picturePosition">
+            </div>
+        </form>
+
+    </div>
+    <div class="column_editor_bottom">
+        <a id="test_one_time" class="button" onclick="Revise(1,false)">保存</a>
+        <a class="button" style="background: none;color: #2872b7;border: 1px solid #2872b7;margin-left: 20px" onclick="Revise(2)">取消</a>
+    </div>
+</div>
+<div class="container">
+    <a class="button" icon="page/articleManagement/img/ico_add.png" onclick="addColumn()">添加栏目</a>
+    <div class="columnList">
+        <span>栏目列表</span>
+    </div>
+    <div id="columnListContent"></div>
+   <!-- <div class="foot">
+        <a>本页共</a><a></a><a>个</a>
+        <a style="margin-left: 20px">总共</a><a id="total"></a><a>个</a>
+        <a class="left" style="margin-left: 200px"><</a>
+        <a class="left">1</a>
+        <a class="left">></a>
+        <a>共</a><a></a><a>页</a>
+        <a style="margin-left: 10px">到第</a>
+        <input />
+        <a>页</a>
+        <a class="ok">确定</a>
+    </div>-->
+</div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		
+		<title>输入框</title>
+		<script type="text/javascript" src="dropDownInput.js"></script>
+		<style>
+			/*设置所有下拉框输入框的样式*/
+			
+			/*默认下拉框的样式，ul元素*/
+			.inputDropDown{
+				border: 1px solid #666;
+				border-top: 0px solid #666;
+				overflow:auto;
+				padding: 0;
+				margin: 0;
+				white-space: nowrap;
+				background-color:#fff;
+			}
+			/*默认下拉列表中选项的样式，li元素*/
+			.dropDownItem{
+				background: #fff;
+			}
+			/*默认下拉列表中选中选项的样式，li元素的hover伪类，注意不是 :hover */
+			.dropDownItemHover{
+				background: #f0f0f0;
+			}
+			
+			
+			/*设置单个下拉框的样式，需要输入框有ID属性，都是类选择器*/
+			
+			/*下拉框的样式，ul元素*/
+			.si_inputDropDown{
+				max-height:80px;
+			}
+			/*默认下拉列表中选项的样式，li元素*/
+			.si_dropDownItem{
+			}
+			/*默认下拉列表中选中选项的样式，li元素的hover伪类，注意不是 :hover */
+			.si_dropDownItemHover{
+			}
+		</style>
+    </head>
+	<body>
+		<br/>
+		<center>
+			<input id="si" type="text" style="width:50%"/>
+			<input type="button" value="匹配ID" onclick="showMatch()"/>
+			<input type="button" value="第一个选项ID" onclick="firstOption()"/>
+			<br/><br/><br/><br/><br/><br/><br/>
+			<div id="show"></div>
+		</center>
+		<br/><br/>
+		<script type="text/javascript">
+			
+			var si = document.getElementById("si");
+			
+			//把某个普通输入框变成下拉输入框，参数可以是下拉框的ID或者对象
+			changeDropDownInput("si");
+		
+			//下拉列表中可能出现的数据源，是一个对象的数组，默认是一个空数组
+			si.dataSource = [{id:1,name:"南京路"},
+							{id:2,name:"南京路吉林路"},
+							{id:3,name:"南京路长春路"},
+							{id:4,name:"南京路水上"},
+							{id:5,name:"南京路水上公园"},
+							{id:6,name:"南京路黑牛城道"}];
+
+			//当数据源更新后，下拉列表可能没有及时更新，调用flush方法，可以及时更新下拉列表			
+			si.flush();
+			
+			//设置数据源中的对象显示到下拉列表中的文字，返回的类型应该是String
+			//参数 option 是指数据源中的对象
+			//默认的规则是 return option.toString();
+			si.howVisible = function(option){
+				return option.name;
+			}
+			si.onMatch = function(option){
+				var show = document.getElementById("show");
+				console.log(option);
+				show.innerHTML = "匹配到{id="+option.id+",name="+option.name+"}";
+			}
+			
+			function showMatch(){
+				//当前输入框中与数据源完全匹配的选项
+				var option = si.hitOption;
+				alert(option.id);
+			}
+			
+			function firstOption(){
+				//当前下拉列表中的第一个选项对应的数据源中的对象
+				var option = si.firstOption;
+				alert(option.id);
+			}
+		</script>
+	</body>
+</html>
+
+

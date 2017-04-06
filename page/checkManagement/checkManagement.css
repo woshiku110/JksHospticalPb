@@ -1,0 +1,117 @@
+*{  margin: 0;  padding: 0;  }
+.container{
+    width: 1000px;
+    height: 1000px;
+}
+.head{
+    overflow:hidden;
+    display: none;
+}
+.head .add_check{
+    width: 100%;
+   margin-top: 12px;
+}
+.add_check_head{
+    width: 100%;
+    border-bottom: 1px solid #2872b7;
+}
+.add_check_head a{
+    display: inline-block;
+    height: 42px;
+    border-bottom: 3px solid #2872b7;
+    color: #2872b7;
+    font-size: 18px;
+    line-height: 46px;
+}
+.add_check_middle{
+    width: 58%;
+    margin: 18px 0;
+}
+.add_check_middle input{
+    margin-left: 4px;
+    height:28px ;
+    border:1px solid #BBBBBB;
+}
+.add_check_middle_right{
+    width: 41%;
+    /*background: red;*/
+    height: 100px;
+    float: right;
+    margin-top: -116px;
+}
+.add_check_middle_right a{
+    display: block;
+    color: red;
+}
+.add_check_middle_right textarea{
+    border: 1px solid black;
+    width: 330px;
+    height: 90px;
+    overflow-y: auto;
+    margin-left: 10px;
+}
+.add_check_bottom{
+    width: 100%;
+    margin-bottom: 40px;
+}
+.content{
+    height: 500px;
+}
+.content_head{
+    width: 100%;
+    font-size: 18px;
+    color: #2872b7;
+}
+.content_head a{
+    height: 46px;
+   display: inline-block;
+    border-bottom:3px solid #2872b7 ;
+    line-height: 53px;
+}
+.content_select{
+    width: 100%;
+    border-top:1px solid #2872b7 ;
+    border-bottom:2px solid #2872b7 ;
+
+}
+.content_select .select{
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+    background: #2872b7;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+}
+/*#content_table{
+    width: 100%;
+    background: blue;
+}*/
+/*
+.tableList{
+    position: absolute;
+    width:447px;
+    border:1px #BBBBBB solid;
+    margin-left: 69px;
+    background: #ffffff;
+}
+.tableList li{
+    line-height: 30px;
+    font-size: 12px;
+    padding-left: 4px;
+    cursor: pointer;
+
+}
+li:link {background-color: #BBBBBB;color: #2872b7;}     */
+/* 未访问的链接 *//*
+
+li:visited {background-color: #BBBBBB}  */
+/* 已访问的链接 *//*
+
+li:hover {background-color: #BBBBBB;color: #2872b7;}    */
+/* 当有鼠标悬停在链接上 *//*
+
+li:active {background-color:#BBBBBB}*/

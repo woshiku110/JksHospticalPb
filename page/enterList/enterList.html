@@ -1,0 +1,138 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="../../common/css/init.css">
+    <link rel="stylesheet" type="text/css" href="../../common/button/button.css">
+    <script type="text/javascript" src="../../common/table/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="../../common/js/util.js"></script>
+    <script type="text/javascript" src="../../common/table/table.js"></script>
+    <script type="text/javascript" src="../../common/button/button.js"></script>
+    <script type="text/javascript" src="../../common/dialog/dialog.js"></script>
+    <script type="text/javascript" src="../../common/dropDownInput/dropDownInput.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="enterList.css">
+    <script type="text/javascript" src="enterList.js"></script>
+    <script type="text/javascript" src="image.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="content_left">
+            	<a id="startEnterInfo" class ="button" icon="/page/enterList/img/play.png" onclick="startEnterInfo()">开始录入</a>
+                <div class="content_left_head">
+                    <div class="content_left_head_character">
+                        <a>处方图片</a>
+                    </div>
+                </div>
+                <div id="picDiv" class="content_left_middle" >
+					<img id="uploadImage" class="dragAble" src="">
+			    </div>
+                <div class="content_left_btn">
+					<div class="ico_left" onclick="previous()"></div>
+					<div class="ico_left_re" onclick="anticlockwise()"></div>
+					<div class="ico_sclare_large" onclick="ImageChange(true)"></div>
+					<div class="picture_num">
+						<span id="page_current">0</span>/<span id="page_length">0</span>
+					</div> 
+					<div class="ico_sclare_small" onclick="ImageChange(false)"></div>
+					<div class="ico_right_re" onclick="clockwise()"></div>
+					<div class="ico_right" onclick="next()"></div> 
+				</div> 
+            </div>
+            <div class="content_right">
+	            <div class="content_head_info">
+	                <div class="content_right_character">
+	                    <a>录入信息</a>
+	                </div>
+	                <div class="content_right_up">
+						<div class="div_height">
+			                <div class="td_title">订单编号:</div>
+			                <div class="col">
+				               <div id="enter_no" name="enter_no" ></div>
+			                </div>
+						</div>
+						<div class="div_height">
+							<div class="td_title">药品名称/编号:</div>
+			                <div class="col">
+			                   <input id="drug_nameOrNumber" name="drug_nameOrNumber"/>
+			                </div>
+			            </div>
+			            <div class="div_height">
+							<div class="td_title">药品规格:</div>
+			                <div class="col">
+			               	   <input id="drug_standard" name="drug_standard" type="text" onclick="setInfos();"/>
+			                </div>
+			            </div>
+			            <div class="div_height">
+							<div class="td_title">药品数量:</div>
+			                <div class="col">
+			                   <input id="drug_number" name="drug_number" type="text" onkeyup="keyup(this);" onafterpaste="paste(this)"/>
+			                </div>
+			            </div>
+	                </div>
+	                <div style="text-align:left;display:inline">
+			           <a href="javascript:void(0)" class="button" id="enterBtn" onclick="enterInfo()">录入</a>&nbsp&nbsp&nbsp
+			           <a href="javascript:void(0)" class="button" id="commitBtn" onclick="commitInfo()">提交</a>
+			     	</div>
+			     	<div id="result" style="display:inline"></div>
+			     	<div class="content_right_down">
+				     	<div class="content_right_character">
+		                    <a>录入细分</a>
+		                </div>
+		                <div class="content_right_sum"style="font-size:14px;display:inline">药品总数:
+		                 <div id="sum" style="display:inline;color:#3268AF"></div>
+			            </div>
+			             <div id="content_right_table"></div>
+	                </div>
+	           </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    /*
+          将药品名称或编号变为下拉框 可以选择
+    */
+    var drug_nameOrNumber=document.getElementById("drug_nameOrNumber");
+	changeDropDownInput("drug_nameOrNumber");
+    var doajax=
+	{
+		type : "post",
+		url : _serverHome + "yuyue/MedicinalSupport_yuyue/MedicinalSupport_searchDrugs",
+		data:{
+			"mcorbh":""
+		},
+		async:true,
+		dataType : 'json',
+		success : function(data) {
+			var arr = eval("(" + data.msg + ")");
+			if(arr.length>0){
+				var context="[";
+				for ( var i = 0; i < arr.length; i++) {
+		  				context+="{'id':'"+arr[i][1];
+		  				context+="'";
+		  				context+=",";
+		  				context+="\"name\":\""+arr[i][0];
+		  				context+="\"}";
+		  				if(i<arr.length-1)
+		  					context+=",";
+	   			}
+				context+="]";
+			}
+			var context = eval("(" + context + ")");
+			drug_nameOrNumber.dataSource=context;
+			drug_nameOrNumber.howVisible = function(arr){
+				return arr.name;
+			};
+			drug_nameOrNumber.autoMatch = true;
+			drug_nameOrNumber.flush();
+		}
+	};
+	$.ajax(doajax);
+	 /*
+          将药品规格改为下拉框
+    */
+    var drug_standard=document.getElementById("drug_standard");
+	changeDropDownInput("drug_standard");
+    </script>
+</body>
+</html>

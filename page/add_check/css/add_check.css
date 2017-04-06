@@ -1,0 +1,91 @@
+a:hover{
+	cursor: pointer;
+}
+.container{
+	background: #f3f3f3;
+	width: auto;
+	height: 700px;
+	padding-top: 50px;
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+.add_btn a,.form-group>a{
+	background: #2872b7;
+	font-size: 16px;
+}
+.add_btn a,.form-group>a,.add_btn a:hover{
+	color: #fff;
+}
+.list_title{
+	width: 90%;
+	border-bottom: 1px solid #2872b7;
+	margin-bottom: 20px;
+}
+.list_title .list{
+	font-size: 18px;
+	display: inline-block;
+	padding: 10px 0;
+	border-bottom: 3px solid #2872b7;
+}
+.list_title .list:hover{
+	text-decoration: none;
+}
+#select,#_select{
+	position: relative;
+	float: left;
+}
+#form_group{
+	margin-top:10px;
+	display: none;
+}
+.form-group{
+	width: 50%;
+	float: left;
+}
+.form-group label{
+	width: 80px;
+	float: left;
+}
+.form-group input{
+	height: 26px;
+}
+#search,#_search{
+	width: 164px;
+}
+#hospital_list,#_hospital_list{
+	width: 162px;
+	background: #fff;
+	padding: 5px;
+	position: absolute;
+	top: 25px;
+	left: 1px;
+	display: none;
+}
+#chevron,#_chevron{
+	position: absolute;
+	top: 5px;
+	left: 140px;
+}
+.form-group .search_btn,#add,#cancel{
+	margin-left: 10px;
+	height: 30px;
+	line-break:30px;
+	display: inline-block;
+	padding:4px 10px 0 10px;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: #2872b7;
+}
+#add,#cancel,#add:hover,#cancel:hover,.search_btn:hover{
+	color: #FFF;
+	text-decoration: none;
+}
+#gjt_table .t_th{
+	font-family: "Microsoft YaHei", 微软雅黑;
+	font-size: 16px;
+	text-align: center;
+}

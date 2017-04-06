@@ -1,0 +1,105 @@
+
+@menuOneHeight:40px;
+@menuTwoHeight:40px;
+@menuOneColor:#27A9E3;
+@menuTwoColor:#28B779;
+
+#left{
+	padding-top: 40px;
+}
+// 左侧菜单
+.menu{
+	width: 100%;
+	text-align: left;
+}
+.menuContainer{
+	width: 100%;
+}
+
+.menuOne{
+	display: block;
+	font-size:@menuOneHeight/3;
+	font-weight:normal;	
+	width: 100%;
+	height: 1em;
+	text-decoration:none;
+	cursor:pointer;
+	color:#fff;
+	background-color:#2E363E;
+	margin:1px 0px 0px 0px;
+	padding-top:1em;
+	padding-bottom:1em;
+	padding-left:30px; //一级菜单到屏幕左边的距离
+}
+.menuOne:hover {color: #fff; background-color:@menuOneColor;}
+.menuOne:active {color: #fff;background-color:@menuOneColor;}
+
+.hitMenuOne{
+	color: #fff;
+	background-color:@menuOneColor;
+}
+.menuOneIcon{
+	display:block;
+	float:left;
+	width:1em;
+	height:1em;
+	margin-right:0.5em;
+}
+.menuOneText{
+	display:block;
+	float:left;
+	width:4em;
+	height:1em;
+	text-align:justify;
+	text-justify:distribute-all-lines;
+	text-align-last:justify;
+}
+.UnreadMark{
+	display:none;
+	float:left;
+	width:1em;
+	height:1em;
+	color:red;
+	margin-left:0.5em;
+}
+
+.menuChildren{
+	background-color:#1E242A;
+}
+.menuTwo{
+	display: block;
+	font-size:@menuTwoHeight/3;
+	width: 100%;
+	height: 1em;
+	text-decoration:none;
+	cursor:pointer;
+	color:#fff;
+	margin:1px 0px 0px 0px;
+	padding-top:1em;
+	padding-bottom:1em;
+	padding-left:50px; //二级菜单到屏幕左边的距离
+}
+.menuTwo:hover {color: #fff; background-color:@menuTwoColor;}
+.menuTwo:active {color: #fff;background-color:@menuTwoColor;}
+
+.hitMenuTwo{
+	color: #fff;
+	background-color:@menuTwoColor;
+}
+
+.menuTwoIcon{
+	display:block;
+	float:left;
+	width:1em;
+	height:1em;
+	margin-right:0.5em;
+}
+.menuTwoText{
+	display:block;
+	float:left;
+//	width:4em;
+	height:1em;
+//	text-align:justify;
+//	text-justify:distribute-all-lines;
+//	text-align-last:justify;
+}

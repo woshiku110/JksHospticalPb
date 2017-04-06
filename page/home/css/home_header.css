@@ -1,0 +1,62 @@
+#logo {
+  width: 178px;
+  height: 70px;
+  background: url('../image/LOGO.png');
+}
+#logoRight {
+  height: 70px;
+  width: calc(100% -  178px);
+  position: absolute;
+  left: 178px;
+  top: 0px;
+}
+#title {
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 18px;
+  margin-left: 20px;
+  color: #fff;
+}
+#rightCell {
+  position: absolute;
+  right: 42px;
+  top: 0px;
+  height: 70px;
+  width: auto;
+}
+#huanying {
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 12px;
+  font-size: 14px;
+}
+#xingming {
+  display: inline-block;
+  margin-top: 24px;
+  margin-right: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+#logout {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 14px;
+}
+#logout:hover {
+  cursor: pointer;
+}
+#logoutText {
+  display: block;
+  float: left;
+  margin-left: 24px;
+}
+#logoutIcon {
+  display: block;
+  float: left;
+  margin-top: 0px;
+  margin-right: 5px;
+  width: 19px;
+  height: 17px;
+  font-size: 17px;
+  background: url('../image/icon_exit.png');
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--<link rel="stylesheet" href="css/bootstrap.css" />-->
+		<link rel="stylesheet" href="css/add_check.css" />
+		<title></title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="add_btn">
+				<a id="add_btn" class="btn">
+					<span>
+						<img src="img/ico_add.png" alt="" />
+					</span>
+					添加检查项
+				</a>
+			</div>
+			<div id="form_group">
+				<div>
+					<p class="list_title"> 
+					 	<a class="list">添加检查项目</a>
+					</p> 
+				</div>
+				<div class="form-group">
+				 	<label for="search">
+				 		所属医院			 		
+				 	</label>
+				 	<div id="_select">
+					 	<input type="text"  id="_search" placeholder="==请选择=="/>
+					 	<span id="_chevron" class="glyphicon glyphicon-chevron-down"></span>
+					 	<ul id="_hospital_list" class="list-unstyled">
+					 		<li>
+
+					 		</li>
+					 	</ul>
+				 	</div>	
+				</div>
+				<div class="form-group">
+					<label for="pname">
+						项目名称
+					</label>
+					<input type="text" id="pname"/>
+				</div>
+				<div class="form-group">
+					<label for="pid">
+						项目编号
+					</label>
+					<input type="text" id="pid"/>
+				</div>
+				<div class="form-group">
+					<label for="pprice">
+						项目价格
+					</label>
+					<input type="text" id="pprice"/>
+				</div>
+				<div class="btn_box">
+					<a id="add" href="#">
+						添加
+					</a>
+					<a id="cancel" href="#">
+						取消
+					</a>
+				</div>
+				<table style="clear: both;"></table>
+			</div>
+			<div class="add_list">
+				<p class="list_title"> 
+				 	<a class="list">检查列表项</a>
+				</p> 
+				<div class="form-group">
+				 	<label for="search">
+				 		检查医院				 		
+				 	</label>
+				 	<div id="select">
+					 	<input type="text"  id="search" placeholder="==请选择=="/>
+					 	<span id="chevron" class="glyphicon glyphicon-chevron-down"></span>
+					 	<ul id="hospital_list" class="list-unstyled">
+					 		<li>
+					 			<a>xxx医院</a>
+					 		</li>
+					 	</ul>
+				 	</div>	
+				 	<a class="search_btn">
+				 		搜索
+				 	</a>
+				</div>
+			</div>
+			<div id="gjt_table">
+				
+			</div>
+		</div>
+		<script src="../../common/js/jquery-1.11.3.js"></script>
+		<script src="js/add_check.js"></script>
+		<script src="../../common/table/table.js"></script>
+		<script src="../../common/js/util.js"></script>
+		<script type="text/javascript">
+
+			var t = new Table("gjt_table",8,4);
+			t.setColWidth(["160px","auto","20%","10em"]);
+			t.setHead(["项目编号","项目名称","价格","操作"]);
+		</script>
+	</body>
+</html>

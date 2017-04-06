@@ -1,0 +1,43 @@
+*{  margin: 0px;padding: 0px}
+.container{
+    width: 100%;
+    font-family: "Microsoft YaHei", 微软雅黑;
+}
+.contentList{
+    height: 100px;
+    border-bottom: 1px solid #BBBBBB;
+    padding: 10px 4px 10px 10px;
+}
+.contentList img{
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+.font{
+    width: calc(100% - 114px);
+    height: 100px;
+    float: left;
+}
+.title{
+    width:95% ;
+    display: inline-block;
+    overflow: hidden;
+    height: 18px;
+    overflow: hidden;
+    margin: 10px 0 0 5%;
+    color: #666666;
+}
+.time{
+    width: 95%;
+    height: 18px;
+    color: #8e8e8e;
+    display: inline-block;
+    margin: 46px 0 0 5%;
+}
+.right{
+    width: 14px;
+    height: 34px;
+    margin-top:44px;
+    background:url('../img/btn_more.png') no-repeat;
+    float: right;
+}

@@ -1,0 +1,46 @@
+*{margin: 0px;padding: 0px; font-family: "Microsoft YaHei", 微软雅黑;  }
+body{
+    background: #FBFBFB;
+}
+.consulation{
+    width: 96%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #e2e2e2;
+    border-top : 1px solid #e2e2e2;
+    padding:6px 0 10px 4%;
+    margin-top: 20px;
+}
+a{
+    font-size: 18px;
+}
+.consulation textarea{
+    width: 97%;
+    border: none;
+    margin-top: 18px;
+}
+#consulation_room{
+    outline: none;
+    border: none;
+    display: block;
+    margin-top: 20px;
+    width: 97%;
+}
+#consulation_people{
+    font-size: 18px;
+    width:24px;
+    float: right;
+    margin-right: 34px;
+    margin-top: 4px;
+    border: none;
+}
+.consulation span{
+    position: absolute;
+    left: 340px;
+    top: 248px;
+    color: #8e8e8e;
+}
+.consulation img{
+    width: 96px;
+    height: 100px;
+    margin: 16px 20px 10px 0;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0"/>
+    <title>我的钱包</title>
+    <link rel="stylesheet" href="css/myWallet.css" />
+    <script>
+        window.onload = function(){
+            var pay = document.getElementsByClassName('middle')[0];
+            var balanceDetail = document.getElementsByClassName('middle')[1];
+            pay.onclick=function(){
+                window.location.href=''
+            };
+            balanceDetail.onclick=function(){
+                window.location.href='balanceDetail.html';
+            };
+        }
+    </script>
+</head>
+    <body>
+        <div class="head">
+            <a>当前账户余额</a><br><br>
+            <span>0.34</span><a>元</a>
+        </div>
+        <div class="middle">
+            <a>余额充值</a>
+            <img src="image/btn_more_s.png">
+        </div>
+        <div class="middle">
+            <a>余额收支明细</a>
+            <img src="image/btn_more_s.png">
+        </div>
+        <div class="foot" >
+            <a>本服务由金康晟提供</a>
+        </div>
+    </body>
+</html>

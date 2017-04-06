@@ -1,0 +1,52 @@
+*{
+	margin: 0;padding:0;
+}
+
+html{
+	background: #2D353D;
+}
+
+form{
+	width: 500px;
+	height: 350px;
+	position: absolute;
+	top: calc(50% - 175px);
+	left: calc(50% - 250px);
+	border: 2px solid #38414B;
+	border-left: 0px;
+	border-right: 0px;
+	line-height:20px;
+}
+form h1{
+	text-align: center;
+	color: white;
+	font-family: '黑体';
+}
+.inputRow{
+	margin-left:77px;
+}
+.icon{
+	display: inline-block;
+	width: 45px;
+	height: 36px;
+}
+.inputRow input{
+	width: 300px;
+	height: 36px;
+	margin-left: -8px;
+	vertical-align: top;
+}
+#hint{
+	margin-left:77px;
+	color:red;
+}
+#submit{
+	background: #5AB75A;
+	border: none;
+	float: right;
+	width: 60px;
+	height: 30px;
+	color: white;
+	margin-right:78px;
+	font-weight: bold;
+}

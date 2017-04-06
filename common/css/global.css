@@ -1,0 +1,11 @@
+*{margin: 0;padding: 0;}
+.defaultInputStyle{
+    height:28px;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", 微软雅黑;
+    color: #333;
+    line-height: 28px;
+}
