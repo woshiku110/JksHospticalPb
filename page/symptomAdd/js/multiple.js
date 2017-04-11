@@ -208,7 +208,7 @@ function finishSubmit(){
     ajaxFileUpload();
     var up_left_1 = document.getElementsByClassName('up_left_1')[0];
     var symptomName = up_left_1.getElementsByTagName('input')[0];
-    var symptomNameValue = symptomName.value
+    var symptomNameValue = symptomName.value;
     var bodyLocation = document.getElementById('text').value;
     var down_content_question = document.getElementsByClassName('down_content_question');
     var inputValue="";
@@ -235,22 +235,35 @@ function finishSubmit(){
     }
     var dataListStr = JSON.stringify(AllAnswerList);
     var partListStr = JSON.stringify(bigData);
-  $.ajax({
-        url: _serverHome + "manage/PartManage_addSymptom",
-        type: 'post',
-        dataType:'json',
-        async:false,
-        data: {
+    UrlLoad("manage/PartManage_addSymptom",
+        {
             "name": symptomNameValue,
-            "pic":pictureName ,
+            "pic":pictureName,
             "part": partListStr,
             "question":dataListStr
         },
+        function(isSucc,result){
+            if(isSucc){
+                console.log("sucess");
+                console.log(result);
+            }else{
+                console.log("fail");
+                console.log(result);
+            }
+        });
+}
+function UrlLoad(url,data,callback){
+    $.ajax({
+       url:_serverHome + url,
+        type: 'post',
+        dataType:'json',
+        async:false,
+        data:data,
         success: function(res) {
-          alert('提交成功！' );
+            callback(true,res);
         },
         error:function(res){
-            console.log('出错了！');
+            callback(false,res);
         }
     });
 }

@@ -103,7 +103,6 @@
     height: 19px;
     background: url("../img/ico_delete.png")no-repeat;
     display: inline-block;
-    margin: 15px 0 0 0;
 }
 .down_content_question_down{
     padding-bottom: 56px;
@@ -214,4 +213,22 @@
     width:78px;
     height:78px;
     background-image: url("../img/ico_add_photo.png");
+}
+.add_qos_item{
+
+}
+.add_qos_item_ans{
+    display:flex;
+    align-items:center;
+    margin-left:25px;
+    margin-top:15px;
+    padding:5px;
+    border: 0px solid white;
+}
+.add_qos_item_ans_revise{
+    display:none;
+    width:30px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center
 }

@@ -76,48 +76,32 @@
             <div class="down_head">
                 <a>对应问题</a>
             </div>
-            <div class="down_content">
-             <!--   <div class="down_content_question">
-                    <div class="down_content_question_up">
+            <div id= "down_content_id" class="down_content">
+                <!--<div class="add_qos_item">
+                    <div style="display: flex;align-items: center;margin-top: 10px">
                         <div class="down_content_question_up_img"></div>
-                        <div style="float:right;margin-top: 10px;margin-right: 45%">
-                            <a>问题类型：</a>
-                           <select style="width: 100px;height: 30px;" >
-                               <option>单选</option>
-                               <option>多选</option>
-                           </select>&nbsp&nbsp&nbsp
-                            <a>题干：</a>
-                            <input type="text" style="width: 272px;height: 30px">
+                        <a style="margin-left: 5px">问题类型</a>
+                        <select style="width: 60px;height:30px;margin-left: 10px">
+                            <option>单选</option>
+                            <option>多选</option>
+                        </select>
+                        <a style="margin-left: 10px">题干：</a>
+                        <input style="width: 100px;height:30px;margin-left: 10px;" type="text" placeholder = "输入问题"/>
+                    </div>
+                    <div style="display: flex;width:1000px;flex-direction:row;flex-wrap: wrap">
+                        <div style="display: flex;align-items: center;margin-left: 25px;margin-top: 15px;border: solid 1px #e2e2e2;padding: 5px">
+                            <a>A:</a>
+                            <input style="width: 100px;height:30px;margin-left: 10px;" type="text"/>
+                            <div style="display: flex;width: 30px;flex-direction: column;align-items: center;justify-content: center">
+                                <img style="width: 15px;height: 15px" src="img/add_pic.png" />
+                                <img style="width: 15px;height: 15px" src="img/dele_pic.png" />
+                            </div>
                         </div>
                     </div>
-                    <div class="down_content_question_down">
-                        <div id="input" style="width:97%;float:left;">
-                            <span style="margin-left: 32px">答案</span>
-                            <span>
-                                <a>A:</a>
-                                <input type="text">
-                            </span>
-                            <span>
-                                <a>B:</a>
-                                <input type="text">
-                            </span>
-                            <span>
-                                <a>C:</a>
-                                <input type="text">
-                            </span>
-                            <span>
-                                <a>D:</a>
-                                <input id ="last" type="text" onfocus="addOneOption()">
-                            </span>
-                        </div>
-                    </div>
-                    <div class="br"></div>
-                </div>
-                <div class="qqqq"></div>
-            </div>-->
+                </div>-->
             </div>
             <div class="down_bottom">
-                <a id="add_question" class="button" style="margin-right: 40px" onclick="addQuestion()">添加问题</a>
+                <a id="add_question" class="button" style="margin-right: 40px" onclick="addQos()">添加问题</a>
                 <a id="submit" class="button" onclick=" finishSubmit()" >完成提交</a>
             </div>
         </div>

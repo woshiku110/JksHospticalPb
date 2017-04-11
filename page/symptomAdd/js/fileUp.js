@@ -2,7 +2,8 @@
 function ajaxFileUpload() {
     //var name = document.getElementById('doc').value;
     var formData = new FormData($("#uploadForm")[0]);
-    var Address = "http://192.168.0.202:8080/File/uploadFile"
+    console.log(formData);
+    var Address = "http://192.168.0.202:8080/File/uploadFile";
     $.ajax({
         url: Address ,
         type: 'POST',
@@ -13,9 +14,8 @@ function ajaxFileUpload() {
         processData: false,
         success: function (data) {
            $("#preview").attr("src", "http://192.168.0.200:8080/File/filebed/"+data.msg);
-           // pictureName = data.msg;
-            alert('提交成功！')
-            console.log(data)
+            pictureName = data.msg;
+            console.log(data);
         },
         error: function (returndata) {
             console.log(returndata);
