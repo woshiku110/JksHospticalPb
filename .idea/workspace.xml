@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48706dc0-3675-472d-a0c0-ab3196fb8e0b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/symptomAdd/js/addQuestion.js" afterPath="$PROJECT_DIR$/page/symptomAdd/js/addQuestion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/articleManagement/js/articleManagement.js" afterPath="$PROJECT_DIR$/page/articleManagement/js/articleManagement.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/symptomAdd/js/multiple.js" afterPath="$PROJECT_DIR$/page/symptomAdd/js/multiple.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/symptomAdd/css/symptomAdd.css" afterPath="$PROJECT_DIR$/page/symptomAdd/css/symptomAdd.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/symptomAdd/symptomAdd.html" afterPath="$PROJECT_DIR$/page/symptomAdd/symptomAdd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="48706dc0-3675-472d-a0c0-ab3196fb8e0b" name="Default" comment="" />
     <ignored path="JksHospticalPb.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addQuestion.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addQuestion.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page/symptomAdd/js/addQuestion.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2425" max-vertical-offset="5379">
+            <state vertical-scroll-proportion="-2.3565714" vertical-offset="4108" max-vertical-offset="5379">
               <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -67,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="multiple.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="multiple.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/symptomAdd/js/multiple.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.4189188" vertical-offset="5940" max-vertical-offset="11451">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1188" max-vertical-offset="11451">
               <caret line="272" column="28" selection-start-line="272" selection-start-column="28" selection-end-line="272" selection-end-column="28" />
               <folding />
             </state>
@@ -315,7 +308,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -458,16 +451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/page/symptomAdd/js/addQuestion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2425" max-vertical-offset="5379">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/symptomAdd/js/symptomAdd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2310">
@@ -478,9 +461,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page/symptomAdd/js/multiple.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.4189188" vertical-offset="5940" max-vertical-offset="11451">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5940" max-vertical-offset="11451">
           <caret line="272" column="28" selection-start-line="272" selection-start-column="28" selection-end-line="272" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/symptomAdd/js/addQuestion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3565714" vertical-offset="4108" max-vertical-offset="5379">
+          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
