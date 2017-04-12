@@ -77,32 +77,13 @@
                 <a>对应问题</a>
             </div>
             <div id= "down_content_id" class="down_content">
-                <!--<div class="add_qos_item">
-                    <div style="display: flex;align-items: center;margin-top: 10px">
-                        <div class="down_content_question_up_img"></div>
-                        <a style="margin-left: 5px">问题类型</a>
-                        <select style="width: 60px;height:30px;margin-left: 10px">
-                            <option>单选</option>
-                            <option>多选</option>
-                        </select>
-                        <a style="margin-left: 10px">题干：</a>
-                        <input style="width: 100px;height:30px;margin-left: 10px;" type="text" placeholder = "输入问题"/>
-                    </div>
-                    <div style="display: flex;width:1000px;flex-direction:row;flex-wrap: wrap">
-                        <div style="display: flex;align-items: center;margin-left: 25px;margin-top: 15px;border: solid 1px #e2e2e2;padding: 5px">
-                            <a>A:</a>
-                            <input style="width: 100px;height:30px;margin-left: 10px;" type="text"/>
-                            <div style="display: flex;width: 30px;flex-direction: column;align-items: center;justify-content: center">
-                                <img style="width: 15px;height: 15px" src="img/add_pic.png" />
-                                <img style="width: 15px;height: 15px" src="img/dele_pic.png" />
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
+
             </div>
             <div class="down_bottom">
+                <!--<a id="add_question" class="button" style="margin-right: 40px" onclick="addQuestion()">添加问题</a>-->
                 <a id="add_question" class="button" style="margin-right: 40px" onclick="addQos()">添加问题</a>
-                <a id="submit" class="button" onclick=" finishSubmit()" >完成提交</a>
+                <a id="submit" class="button" onclick="collectAllQosAns()" >完成提交</a>
+                <!--<a id="submit" class="button" onclick="finishSubmit()" >完成提交</a>-->
             </div>
         </div>
     </div>

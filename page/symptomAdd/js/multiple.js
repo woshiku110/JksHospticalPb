@@ -252,6 +252,79 @@ function finishSubmit(){
             }
         });
 }
+function collectAllQosAns(){
+    var up_left_1 = document.getElementsByClassName('up_left_1')[0];
+    var symptomName = up_left_1.getElementsByTagName('input')[0];
+    var symptomNameValue = symptomName.value;
+    var parent = document.getElementById('down_content_id');
+    var qosAnsList = [];
+    console.log(parent.childNodes.length);
+    for(var i=1;i<parent.childNodes.length;i++){
+        console.log("i:"+i);
+        var element = parent.childNodes[i].childNodes[0];
+        var inputs = element.getElementsByTagName('input');
+        var selector = element.getElementsByTagName('select')[0];
+        var index = selector.selectedIndex; // 选中索引
+        console.log(index);
+        var item = [];
+        var answers = [];
+        var qos = inputs[0].value;
+        if(qos.length==0){
+            alert("请把第"+i+"个问题写入后再提交!!!");
+            return;
+        }
+        for(var j=1;j<inputs.length;j++){
+            if(inputs[j].value.length>0){
+                answers.push(inputs[j].value);
+            }
+        }
+        item.push(index+1);
+        item.push(qos);
+        item.push(JSON.stringify(answers));
+        qosAnsList.push(item);
+    }
+    var dataListStr = JSON.stringify(qosAnsList);
+    var partListStr = JSON.stringify(bigData);
+    ajaxFileUpload();
+    if(pictureName.length>0 && pictureName != '提交文件失败'){
+        UrlLoad("manage/PartManage_addSymptom",
+            {
+                "name": symptomNameValue,
+                "pic":pictureName,
+                "part": partListStr,
+                "question":dataListStr
+            },
+            function(isSucc,result){
+                if(isSucc){
+                    alert("提交成功!!!");
+                    console.log("sucess");
+                    console.log(result);
+                }else{
+                    alert("提交失败!!!");
+                    console.log("fail");
+                    console.log(result);
+                }
+            });
+    }else{
+        UrlLoad("manage/PartManage_addSymptom",
+            {
+                "name": symptomNameValue,
+                "part": partListStr,
+                "question":dataListStr
+            },
+            function(isSucc,result){
+                if(isSucc){
+                    alert("提交成功!!!");
+                    console.log("sucess");
+                    console.log(result);
+                }else{
+                    alert("提交失败!!!");
+                    console.log("fail");
+                    console.log(result);
+                }
+            });
+    }
+}
 function UrlLoad(url,data,callback){
     $.ajax({
        url:_serverHome + url,

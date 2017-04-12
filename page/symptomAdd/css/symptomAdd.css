@@ -232,3 +232,11 @@
     align-items:center;
     justify-content:center
 }
+
+.symbol_input{
+    border: 1px solid #BBBBBB;
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 5px;
+    height: 20px;
+}

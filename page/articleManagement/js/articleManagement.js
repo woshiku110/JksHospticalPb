@@ -109,8 +109,7 @@ function ajaxFileUpload() {
         contentType: false,
         processData: false,
         success: function (data) {
-            console.log(data );
-             pictureName = data.msg;
+            pictureName = data.msg;
             if(pictureName=='提交文件失败'){
                 alert('提交图片失败！')
             }else{
